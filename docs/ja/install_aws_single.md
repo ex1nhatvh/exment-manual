@@ -8,7 +8,7 @@ Webサーバーのインストールをはじめとして、完全に新規に�
 本ページでは、以下の内容で構築を行っております。  
 - Amazon Linux 2
 - Apache 2.4.53
-- PHP 8.0.8
+- PHP 8.2.x
 - MySQL 5.7.25
 
 
@@ -42,16 +42,16 @@ sudo yum -y update
 ~~~
 
 - インストール可能なPHPのバージョンを確認します。  
-※PHP8.0以外のバージョンが有効(enabled)になっている場合は無効化しておきましょう。  
+※PHP8.2以外のバージョンが有効(enabled)になっている場合は無効化しておきましょう。  
 
 ~~~
 sudo amazon-linux-extras | grep php
 ~~~
 
-- 「php8.0」を確認できたら、インストールを行います。
+- 「php8.2」を確認できたら、インストールを行います。
 
 ~~~
-sudo amazon-linux-extras install -y php8.0
+sudo amazon-linux-extras install -y php8.2
 ~~~
 
 - その他、必要ライブラリのインストールを行います。
@@ -179,7 +179,7 @@ sudo systemctl restart php-fpm
 ## PHPバージョンアップ時の対応
 PHPのバージョンを変更する場合、以下の手順でバージョンアップを行ってください。  
 ※バージョンアップ作業中は、Exmentにアクセスできなくなります。  
-※下記の例は、PHP7.4からPHP8.0へアップデートするための手順です。  
+※下記の例は、PHP8.0からPHP8.2へアップデートするための手順です。  
 ※Amazon Linux 2のExtras Library(amazon-linux-extras)を用いて、PHPのインストールを行っている前提です。  
 ※環境や導入時期、バージョンやインストール方法によって、バージョンアップ方法は異なる場合があります。  
 
@@ -192,17 +192,17 @@ which amazon-linux-extras
 ~~~
 
 - PHPのバージョンとExtras Libraryのトピックを確認します。  
-※PHPのバージョンが7.4.Xであること。PHP7.4のトピックがenabledであること、PHP8.0のトピックが存在することを確認してください。  
+※PHPのバージョンが8.0.Xであること。PHP8.0のトピックがenabledであること、PHP8.2のトピックが存在することを確認してください。  
 
 ~~~
 php -v
 amazon-linux-extras | grep php
 ~~~
 
-- PHP7.4のトピックを無効にします。  
+- PHP8.0のトピックを無効にします。  
 
 ~~~
-sudo amazon-linux-extras disable php7.4
+sudo amazon-linux-extras disable php8.0
 ~~~
 
 - PHPフォルダを空にします。  
@@ -211,11 +211,11 @@ sudo amazon-linux-extras disable php7.4
 sudo yum -y remove php\*
 ~~~
 
-- PHP8.0のトピックを有効化後にインストールします。  
+- PHP8.2のトピックを有効化後にインストールします。  
 
 ~~~
-sudo amazon-linux-extras enable php8.0
-sudo amazon-linux-extras install -y php8.0
+sudo amazon-linux-extras enable php8.2
+sudo amazon-linux-extras install -y php8.2
 ~~~
 
 - PHPの拡張機能をインストールします。  
@@ -224,7 +224,7 @@ sudo amazon-linux-extras install -y php8.0
 sudo yum -y install php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64
 ~~~
 
-- PHPのバージョンが8.Xになっていること、PHP7.4のトピックがdisabled、PHP8.0のトピックがenabledになっていることを確認します。  
+- PHPのバージョンが8.Xになっていること、PHP8.0のトピックがdisabled、PHP8.2のトピックがenabledになっていることを確認します。  
 
 ~~~
 php -v
