@@ -229,7 +229,7 @@ ssh -i ~/exment_key.pem ec2-user@(WebサーバーAのプライベートIPアド�
 sudo yum -y update
 sudo amazon-linux-extras install -y php8.2
 sudo yum install -y httpd mysql
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64
+sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
 ~~~
 
 - 以下のコマンドを実行し、Apacheを起動、自動起動設定します。

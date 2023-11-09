@@ -58,7 +58,7 @@ sudo amazon-linux-extras install -y php8.2
 
 ~~~
 sudo yum install -y httpd git
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64
+sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
 ~~~
 
 - 以下のコマンドを実行し、Apacheを起動、自動起動設定します。
@@ -129,7 +129,7 @@ MySQLを同サーバーにインストールしない場合でも、mysqlコマ�
 ※MySQLを同サーバーにインストールする場合は、この手順を飛ばしてください。
 
 ~~~
-sudo rpm -ivh http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+sudo rpm -ivh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 
 # こちらを実施時して、mysql-community-clientが存在するかを確認します
@@ -158,6 +158,7 @@ cd exment
 # 最低限の権限を追加する
 sudo chmod 0775 /var/www/exment
 sudo chown -R ec2-user:apache /var/www/exment
+sudo setfacl -m u:apache:rwx -R /var/www/exment
 
 # 以下のコマンドを実行し、フォルダの権限を付与する。1もしくは2を実施する
 # 1. かんたんインストールの場合
@@ -221,7 +222,7 @@ sudo amazon-linux-extras install -y php8.2
 - PHPの拡張機能をインストールします。  
 
 ~~~
-sudo yum -y install php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64
+sudo yum -y install php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
 ~~~
 
 - PHPのバージョンが8.Xになっていること、PHP8.0のトピックがdisabled、PHP8.2のトピックがenabledになっていることを確認します。  
