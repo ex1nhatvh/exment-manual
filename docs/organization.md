@@ -21,7 +21,9 @@ A list of organizations currently registered in the system is displayed.
 
 - A new addition screen will be displayed. Enter necessary information.  
 ※ For the item "Parent organization", select the parent hierarchy of that organization.
-![Organization screen](img/organization/organization4.png)
+![Organization screen](img/organization/organization28.png)
+
+- Note: 所属ユーザ設定可能 setting will display if you set [env](/config#control-show-auth-setting) file and add this column to [form](/organization?id=user-auth-setting)
 
 ### Save
 After filling in the settings, click “Submit”.
@@ -144,3 +146,26 @@ When creating new custom data, it is shared with the logged-in user and **the or
 → As a result, the user "Sales Department 1 User B" belonging to the organization "Sales Department 1" can also access
 
 ![Organization hierarchy](img/organization/organization20.png)
+
+### User auth setting
+Go to the setting form of the organization
+
+![Organization hierarchy](img/organization/organization21.png)
+
+Add show auth setting column to the form and save
+
+![Organization hierarchy](img/organization/organization22.png)
+
+In the create and edit organization screen you can use this setting to control if user belong to the organization can access auth setting
+
+![Organization hierarchy](img/organization/organization23.png)
+
+If set to No user belong to the organization will not see the auth setting and can not access by url
+
+![Organization hierarchy](img/organization/organization24.png)
+![Organization hierarchy](img/organization/organization25.png)
+
+If set to Yes user belong to the organization can see the auth setting and access by url
+
+![Organization hierarchy](img/organization/organization26.png)
+![Organization hierarchy](img/organization/organization27.png)

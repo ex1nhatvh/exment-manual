@@ -23,7 +23,9 @@ http(s)://(ExmentのURL)/admin/data/organization
 
 - 新規追加画面が表示されますので、必要事項を入力します。  
 ※項目「親組織」は、その組織の親階層を選択してください。
-![組織画面](img/organization/organization4.png)
+![組織画面](img/organization/organization28.png)
+
+- 「所属ユーザ設定可能」項目を表示にするには、[.envのパラメータ追加](/ja/config#所属ユーザ設定可制御機能)と[組織フォームの項目追加](/ja/organization?id=所属ユーザ設定可能項目追加)が必要です。
 
 ### 保存
 設定を記入したら、［送信］をクリックしてください。
@@ -145,3 +147,28 @@ Exmentでは、[カスタムデータのデータ共有設定](/ja/data_details#
 →結果として、組織「営業1部」に所属するユーザー「営業1部ユーザーB」も、アクセスできる
 
 ![組織階層](img/organization/organization20.png)
+
+### 「所属ユーザ設定可能」項目追加
+「組織」のフォーム修正画面を開きます。
+
+![Organization hierarchy](img/organization/organization21.png)
+
+「所属ユーザ設定可能」項目をフォーム項目エリアに移動して、保存します。
+
+![Organization hierarchy](img/organization/organization22.png)
+
+保存後、組織登録／修正画面で「所属ユーザ設定可能」項目が表示されます。
+
+![Organization hierarchy](img/organization/organization23.png)
+
+「所属ユーザ設定可能」＝NOの場合は、
+- 対象組織に所属するユーザのユーザ設定が非表示・設定不可になります。
+- URLでユーザ設定画面を開いても権限なしのメッセージが表示されます。
+
+![Organization hierarchy](img/organization/organization24.png)
+![Organization hierarchy](img/organization/organization25.png)
+
+「所属ユーザ設定可能」＝YESの場合は、対象組織に所属するユーザのユーザ設定が表示・設定可能になります。
+
+![Organization hierarchy](img/organization/organization26.png)
+![Organization hierarchy](img/organization/organization27.png)

@@ -309,6 +309,12 @@ The decryption password will be sent separately.
     - 1 : Login user and lowest organization
     - 2 : Login user and all affiliated organizations
 
+#### Control show auth setting
+- Setting key : EXMENT_SHOW_AUTH_SETTING
+- Default value : false
+- Role : By setting to true, you can display the show auth setting of the user belong to this organization in the create and edit organization screen.
+- Note : You will need to add the show_auth_setting column to the default form of organization table. Please refer [here](/organization?id=user-auth-setting) for more detail
+
 ### Order setting
 
 #### Sorting order of affiliated organization settings on the user edit page
