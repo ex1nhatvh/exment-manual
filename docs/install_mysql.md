@@ -26,8 +26,7 @@ Click this line and click the "→" in the middle.
 ![MySQL installation screen](img/xampp/mysql5.png)  
 
 - "Check Requirements" may be displayed.  
-In that case, click "Execute" and install the related components.  
-![MySQL installation screen](img/xampp/mysql8.png)  
+In that case, click "Execute" and install the related components. 
 
 - Click "Yes" or "Install" until done.  
 ![MySQL installation screen](img/xampp/mysql9.png)  

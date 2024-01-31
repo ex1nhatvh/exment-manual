@@ -1,6 +1,15 @@
 # Release notes
 * Click [here](/patch_weakness) for the patch / vulnerability list.
 
+## v6.0.0 (2024/02/26)
+
+- <span class="red bold">Updating from v4.4.X or lower to v6.0.0 or higher requires a manual update. Please check [here](/update/v6_0_php8) once and update it.</span>
+
+1. General
+    - Changed the framework used from Laravel9 to Laravel10
+    - Changed the minimum version of PHP from PHP 8.0 to 8.2 or higher
+    - Changed the minimum version of MySQL from MySQL 5.7 to 8.0 or higher (recommended: MySQL 8.0)
+
 ## v5.0.10 (2023/10/30)
 
 1. Bug fixes

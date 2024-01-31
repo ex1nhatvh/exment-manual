@@ -221,9 +221,9 @@ ssh -i ~/exment_key.pem ec2-user@(Private IP address of Web server A)
 
 ~~~
 sudo yum -y update
-sudo amazon-linux-extras install -y php7.4
+sudo amazon-linux-extras install -y php8.2
 sudo yum install -y httpd mysql
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64
+sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
 ~~~
 
 - Execute the following command to start Apache and configure automatic startup.
@@ -242,10 +242,10 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 ~~~
 
-- Through the path to php7.4. With the command, you can run php7.4.
+- Through the path to php8.2. With the command, you can run php8.2.
 
 ~~~
-sudo ln -s /usr/bin/php74 /usr/bin/php
+sudo ln -s /usr/bin/php82 /usr/bin/php
 ~~~
 
 - Install composer.
@@ -412,13 +412,13 @@ amazon-linux-extras | grep php
 sudo amazon-linux-extras disable php7.2
 ~~~
 
-- Install the PHP 7.4 topic.  
+- Install the PHP 8.2 topic.  
 
 ~~~
-sudo amazon-linux-extras install php7.4
+sudo amazon-linux-extras install php8.2
 ~~~
 
-- Make sure the PHP version is 7.4.X, the PHP 7.2 topic is disabled, and the PHP 7.4 topic is enabled.  
+- Make sure the PHP version is 8.2.X, the PHP 7.2 topic is disabled, and the PHP 8.2 topic is enabled.  
 
 ~~~
 php -v

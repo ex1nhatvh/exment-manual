@@ -11,8 +11,10 @@ In this manual, Windows is introduced.
 
 ### XAMPP installation procedure
 - Access the following site and download XAMPP.  
-From the following page, select the one with "PHP7.3" or higher and download it.  
-[XAMPP Download](https://www.apachefriends.org/jp/download.html)  
+[XAMPP Download](https://www.apachefriends.org/jp/download.html)
+
+- From the following page, select the one with "PHP8.2" or higher and download it.  
+![XAMPP installation screen](img/xampp/xampp_win.png)
 
 - After that, proceed with the installation of XAMPP.  
 ![XAMPP installation screen](img/xampp/xampp1.png)
@@ -58,7 +60,7 @@ If you run mysql from the command prompt, you need to pass the path to "environm
 - Click New and add the following line:
 
 ~~~
-C:\Program Files\MySQL\MySQL Server 5.7\bin  
+C:\Program Files\MySQL\MySQL Server 8.2\bin  
 ~~~
 
 ![MySQL environment variables](img/xampp/mysql_command5.png)
@@ -86,7 +88,7 @@ Therefore, we strongly recommend that you avoid these issues. Please set accordi
 - Create a folder "local" in the folder "C: \ xampp".
 ![Subdomain settings](img/xampp/subdomain1.png)
 
-- Open "C: \ xampp \ apache \ conf \ extra \ httpd-vhosts.conf".
+- Open "C:\xampp\apache\conf\extra\httpd-vhosts.conf".
 
 - Add the following description at the end of the line.  
 **※"/ Public" is required at the end of DocumentRoot**  

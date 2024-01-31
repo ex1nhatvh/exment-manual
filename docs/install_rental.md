@@ -4,9 +4,9 @@ This page describes the procedure for building an Exment on the rental server.
 
 ## Points to note when building on a rental server
 - Exment requires the following environment.
-    1. PHP 7.3.0 or higher  
-    1. MySQL 5.7.8 or higher, less than 8.0.0  
-or MariaDB 10.2.7 or higher  
+    1. PHP 8.2 or higher  
+    1. MySQL 8.0 or higher
+or MariaDB 10.4 or higher  
   <span class="red">Especially the MySQL version may not meet the requirements depending on the rental server.  
 Please check in advance if your rental server meets the requirements.</span>
 
@@ -33,7 +33,6 @@ It does not describe general IT-related knowledge such as SSH, database creation
 
 - Change the PHP version.  
 In the case of Xserver, the version of PHP that is set from the management screen may be different from the version of PHP that is executed when a command is executed through SSH connection.  
-![Xserver設定](img/install/install_xserver1.png)  
 So, set the version of Xserver at the time of command.  
 
 - Click "Switch PHP Ver." From the management screen of Xserver.  
@@ -42,7 +41,7 @@ Then select the target domain.
 ![Xserver設定](img/install/install_xserver3.png)  
 
 - The current version is described from "PHP version switching", so write down the version.  
-![Xserver設定](img/install/install_xserver4.png)  
+![Xserver設定](img/install/install_xserver6.png)  
 
 - SSH to Xserver.  
 
@@ -52,20 +51,14 @@ From the command result, copy the path to the version of PHP that you wrote down
 ~~~ bash
 find /opt/php-*/bin -type f -name 'php'
 
-## /opt/php-7.1.2/bin/php
-## /opt/php-7.1.3/bin/php
-## /opt/php-7.1.4/bin/php
-## /opt/php-7.4.1/bin/php
-## /opt/php-7.4.14/bin/php
-## /opt/php-7.4.6/bin/php ←Here in this example
-## /opt/php-7.4/bin/php
+## /opt/php-8.2.9/bin/php ←今回の例ではこちら
 ~~~
 
 - Create a folder and create a symbolic link to PHP.  
 
 ~~~
 mkdir $HOME/bin
-ln -s /opt/php-7.4.6/bin/php $HOME/bin/php
+ln -s /opt/php-8.2.9/bin/php $HOME/bin/php
 ~~~
 
 - Modify the bashrc file to pass the path to the PHP version above.  
@@ -87,8 +80,6 @@ If the version is listed on the management screen, you are done.
 php --version
 ~~~
 
-![Xserver設定](img/install/install_xserver5.png)  
-
 - Install composer.  
 
 ~~~ bash
@@ -98,11 +89,11 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=$HOME/bin/
 mv $HOME/bin/composer.phar $HOME/bin/composer
 ## Verification
 composer --version
-# Composer version 1.8.5 2019-04-09 17:46:47
+# Composer version 2.6.5 2023-10-06 10:11:52
 ~~~
 
-- Install Exment. Here,**please do not install directly under "$ HOME / (domain name) / public_html" folder.**  
-This time, create “$ HOME / (domain name) / laravel” folder and install Exment in it.  
+- Install Exment. Here, **please do not install directly under "\$HOME/(domain name)/public_html" folder.**  
+This time, create “\$HOME/(domain name)/laravel” folder and install Exment in it.  
 
 ~~~ bash
 cd ~/(Domain name)
@@ -113,7 +104,7 @@ unzip exment.zip
 rm exment.zip
 ~~~
 
-- Create a symbolic link to the “$ HOME / (domain name) / laravel / exment / public” folder in the “$ HOME / (domain name) / public_html” folder.  
+- Create a symbolic link to the “\$HOME/(domain name)/laravel/exment/public” folder in the “\$HOME/(domain name)/public_html” folder.  
 By creating a symbolic link, the Laravel public folder will be in the public_html folder even if the Laravel main unit and setting values ​​are not in the Web-published folder.  
 
 ~~~ bash
@@ -174,7 +165,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=usr/local/bin/
 mv usr/local/bin/composer.phar usr/local/bin/composer
 ## Verification
 nice -n 20 composer --version
-# composer version 1.8.5 2019-04-09 17:46:47
+# Composer version 2.6.5 2023-10-06 10:11:52
 ~~~
 
 - Install Exment.**never install directly under the "$ HOME / www /" folder.**  
@@ -189,7 +180,7 @@ unzip exment.zip
 rm exment.zip
 ~~~
 
-- Create a symbolic link to the "$ HOME / laravel / exment / public" folder created in the "$ HOME / www / exment" folder.  
+- Create a symbolic link to the "\$HOME / laravel / exment / public" folder created in the "\$HOME / www / exment" folder.  
 By creating a symbolic link, the laravel public folder will be in the www folder, even if the Laravel body and settings are not in the web-published folder.  
 
 ~~~
@@ -202,7 +193,7 @@ ln -s $HOME/laravel/exment/public $HOME/www/exment
 ## Correspondence at the time of PHP version upgrade
 If you want to change the PHP version, please follow the steps below to upgrade.  
 *You will not be able to access Exment during the version upgrade process.  
-*The following procedure example is a procedure for updating to PHP 7.4.  
+*The following procedure example is a procedure for updating to PHP 8.x.  
 *The version upgrade method may differ depending on the environment, installation time, version and installation method.  
 
 - From the Sakura Internet management screen, click "Script settings" → "Language version settings".  
@@ -215,6 +206,6 @@ If you want to change the PHP version, please follow the steps below to upgrade.
 
 - Check the PHP version. If it is a new version, it is successful.  
 
-~~~ 
+~~~ bash
 php --version
 ~~~
