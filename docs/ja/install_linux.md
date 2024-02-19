@@ -114,7 +114,7 @@ mv composer.phar /usr/local/bin/composer
 ~~~
 
 - php.iniに、必要な記述・編集を行います。  
-特に、[PHP設定値変更]（/ja/additional_php_ini）で、メモリ使用量の変更・タイムアウト時間変更などを行う場合は、こちらの設定を変更してください。
+特に、[PHP設定値変更](/ja/additional_php_ini)で、メモリ使用量の変更・タイムアウト時間変更などを行う場合は、こちらの設定を変更してください。
 
 ~~~
 vi /etc/php.ini
