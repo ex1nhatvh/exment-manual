@@ -12,7 +12,7 @@ MySQLも現段階で最新バージョンとなるMySQL8.0へと変更するこ�
 ## MariaDBバージョンアップ方法 MariaDB 10.4
 MariaDB10.4未満を利用している場合は、MariaDB10.4へアップデートする必要があります。
 ### XAMPP環境のアップデート作業
-- 作業の前準備としてMariaDBを停止し、XAMPPコントロールパネルを終了します。  
+- 作業の前準備としてapacheやMySQL(MariaDB)を停止し、XAMPPコントロールパネルを終了します。  
 - mysqlフォルダーの名前を変更します。（例：デフォルト名前の「C:\xampp\mysql」⇒「C:\xampp\mysql-old」に変更します）
 - 新しいMariaDBをZIP形式でダウンロードします。 
 
