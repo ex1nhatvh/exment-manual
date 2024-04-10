@@ -210,7 +210,7 @@ php artisan exment:setup-dir --easy_clear=1
 ## PHPバージョンアップ時の対応
 PHPのバージョンを変更する場合、以下の手順でバージョンアップを行ってください。  
 ※バージョンアップ作業中は、Exmentにアクセスできなくなります。  
-※下記の手順例は、PHP7.4からPHP8.0へアップデートするための手順です。  
+※下記の手順例は、PHP7.4からPHP8.2へアップデートするための手順です。  
 ※epelとremiリポジトリを用いて、PHPのインストールを行っている前提です。  
 ※環境や導入時期、バージョンやインストール方法によって、バージョンアップ方法は異なる場合があります。  
 
@@ -246,26 +246,26 @@ yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum -y install yum-utils
 ~~~
 
-- PHP8.0のパッケージのみを有効にします。  
+- PHP8.2のパッケージのみを有効にします。  
 
 ~~~
 yum-config-manager --disable 'remi-php*'
-yum-config-manager --enable remi-php80
+yum-config-manager --enable remi-php82
 ~~~
 
-- 使用可能なリポジトリを確認します。「remi-php80」が表示されればOKです。  
+- 使用可能なリポジトリを確認します。「remi-php82」が表示されればOKです。  
 
 ~~~
 yum repolist
 ~~~
 
-- PHP8.0と拡張機能のインストールを行います。  
+- PHP8.2と拡張機能のインストールを行います。  
 
 ~~~
 yum -y install php php-{cli,fpm,mysqlnd,zip,devel,gd,mbstring,curl,xml,pear,bcmath,json,opcache,redis,memcache} 
 ~~~
 
-- PHPのバージョンが8.0になっていることを確認します。  
+- PHPのバージョンが8.2になっていることを確認します。  
 
 ~~~
 php -v
