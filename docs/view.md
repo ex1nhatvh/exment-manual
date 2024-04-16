@@ -121,7 +121,6 @@ If you select "Match Any Condition", data that matches any of the conditions wil
 
 - Condition Reverse:  
 If you check "Reverse condition", data that does not match the conditions will be displayed.  
-If you do not check "Reverse condition", data that matches the conditions will be displayed.  
 ※ Only the summary view is not eligible for the display condition reversal function.
 
 #### About search conditions
