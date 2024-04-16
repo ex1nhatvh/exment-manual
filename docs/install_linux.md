@@ -18,7 +18,7 @@ General IT knowledge such as SSH, database creation, Linux commands, etc. is not
 
 - **This procedure assumes that you are running with an administrator account. If executed by a user who is not an administrator account, add "sudo" to the beginning**
 
-- If an error occurs during installation, please refer to [Troubleshooting](/en/troubleshooting).
+- If an error occurs during installation, please refer to [Troubleshooting](/troubleshooting).
 
 
 ## Installation instructions using Linux
