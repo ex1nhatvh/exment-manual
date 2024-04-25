@@ -834,7 +834,7 @@
 ## v3.5.0 (2020/07/28)
 1. Addition of functions
     - Added data update settings. A specific trigger such as "click a button" or "create new data" updates the data saved in Exment in a batch. Click [here](/operation) for details.
-    - You can now select the screen type in the form priority settings. You can make settings such as "form that is displayed only when creating a new form" and "form that is displayed only on the data details screen". Form priority setting is [here](/form # form display condition setting)
+    - You can now select the screen type in the form priority settings. You can make settings such as "form that is displayed only when creating a new form" and "form that is displayed only on the data details screen". Form priority setting is [here](/form#form-priority-settings)
     - Added the editing function of the plug-in. You can edit, upload new, and delete plug-in files from the screen.
     - Fixed so that the user view / user dashboard can be enabled / disabled from the system settings.
     - Drag and drop is supported for file / image columns. * To disable it, click [here](/config#disable-drag-and-drop-of-file).
