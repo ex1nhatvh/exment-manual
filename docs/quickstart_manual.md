@@ -5,14 +5,10 @@ These are the steps required to start Exment.
 ## important point
 - **If you do not have a web server, [set up the server](/server) first.**  
 (If you do not know if you have built a server, please check it once)
-- If an error occurs during installation, see If [an error occurs during installation](/install_error).
-- For other inquiries, please feel free to [contact us](https://exment.net/inquiry) for free.
 
-## Server settings
-Exment requires PHP7.3.0 or higher. Also, MySQL 5.7.8 or more and less than 8.0.0 or MariaDB 10.2.7 or more is required.  
-XAMPP is recommended when building an environment with PHP, Apache, and MySQL as a development environment from the beginning.  
-Please refer to [here](/install_xampp) for server settings.  
-※ If you already have an environment, this setting is not required.
+- If an error occurs during installation, please refer to [Troubleshooting](/troubleshooting)
+
+- Currently, we are unable to accept individual inquiries regarding installation procedures or server construction. If you would like individual support, please request paid support.
 
 ## composer introduction
 Exment requires the introduction of composer. Please refer here for the introduction method.  
@@ -25,13 +21,19 @@ Exment requires the introduction of composer. Please refer here for the introduc
 ## Laravel installation (project creation)
 - At the command line, execute the following command:  
 ※ The folder of the created project is called "root directory" in this manual.  
-※ Exment is currently only available for version 8.X. Please do not install on any other version.  
 
 ~~~
-composer create-project "laravel/laravel=9.*" (Project name)
+composer create-project "laravel/laravel=10.*" (Project name)
 cd (Project name)
+composer config --no-plugins allow-plugins.kylekatarnls/update-helper true
 composer require psr/simple-cache=^2.0.0
-composer require exceedone/exment
+composer require psr/http-message="1.*"
+composer require nesbot/carbon=~2.71.0
+composer require exceedone/exment -W
+# If you want to specify the Exment version, execute the following instead. Example: v3.2.6
+composer require exceedone/exment=3.2.6
+# If you want to specify the Exment version, execute the following instead. Example 2: develop (development version)
+composer require exceedone/exment=dev-develop
 ~~~
 
 ## Create database
@@ -81,29 +83,6 @@ ADMIN_HTTPS=true
 ~~~
 
 
-## (Recommended) Add error page
-
-- Open "app / Exceptions / Handler.php" and add the following to the "render" function.  
-※ Depending on the content of the error, the error page controlled here may not be displayed, and a Laravel error may be displayed.  
-
-~~~ php
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        // addition
-        return \Exment::error($request, $exception, function($request, $exception){
-            return parent::render($request, $exception);
-        });
-    }
-~~~
-
-
 ## Command execution
 - Execute the following command.
 
@@ -125,34 +104,3 @@ Please check the link below.
 - [Change file upload limit size](/quickstart_more.md#Change-file-upload-limit-size)
 
 
-## (old) config change
-※ These settings are no longer required from v1.2.0.  
-However, I keep a record of the settings in the past version. (Will be removed in the future)  
-
-- Open "config/admin.php" and modify the key "auth.providers.admin.driver" as follows.
-
-~~~ php
-    'auth' => [
-        'providers' => [
-            'admin' => [
-                // Exment Edit------s
-                // 'driver' => 'eloquent',
-                //'model'  => Encore\Admin\Auth\Database\Administrator::class,
-                'driver' => 'exment-auth',
-                // Exment Edit------e
-            ],
-        ],  
-    ],
-~~~
-
-- If you want to change the language and time zone, open "config/app.php" and modify the following line.
-
-~~~ php
-
-    // 'timezone' => 'UTC',
-    'timezone' => 'Asia/Tokyo',
-
-    //'locale' => 'en',
-     'locale' => 'ja',
-
-~~~
