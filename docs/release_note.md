@@ -1,6 +1,17 @@
 # Release notes
 * Click [here](/patch_weakness) for the patch / vulnerability list.
 
+## v6.0.3 (2024/05/09)
+1. Function fixes
+    - Adjusting the display order of the view list when switching views.
+
+1. Bug fixes
+    - Fix the bug where trying to update columns other than the image column (multiple selections OK) for data with an image column via the API (put-value) results in a 500 error.
+    - Fix the malfunction in image deletion via the API.
+    - Fix the bug where the condition value does not clear even if the condition item is changed when opening view settings etc. where the condition value is already set.
+    - Fix the bug where data linkage does not work in the text editor column.
+
+
 ## v6.0.2 (2024/04/10)
 1. General
      - Compatible with Maria DB 10.11 Details [here](/update/v6_0_2)

@@ -123,6 +123,56 @@ rm /usr/bin/composer
     - [Mac版 解説サイト](https://weblabo.oscasierra.net/php-composer-macos-homebrew-install/)
 
 
+### アップデートバッチの実行やcomposer requireコマンドの実行時、"require ext-gd "、"require ext-sodium "、"require ext-zip "エラーが発生する
+アップデートバッチの実行やcomposer requireコマンドの実行時に、以下の表示になることがあります。
+```
+  Problem 1
+    - phpoffice/phpspreadsheet[1.23.0, ..., 1.29.0] require ext-gd * -> it is missing from your system. Install or enable PHP's gd extension.
+```
+```
+  Problem 1
+    - lcobucci/jwt[5.0.0, ..., 5.3.0] require ext-sodium * -> it is missing from your system. Install or enable PHP's sodium extension.
+```
+```
+  Problem 1
+    - exceedone/exment[v5.0.0, ..., v5.0.11] require phpoffice/phpspreadsheet ^1.23.0 -> satisfiable by phpoffice/phpspreadsheet[1.23.0, ..., 1.29.0].
+    - phpoffice/phpspreadsheet[1.23.0, ..., 1.29.0] require ext-zip * -> it is missing from your system. Install or enable PHP's zip extension.
+    - Root composer.json requires exceedone/exment ^5.0 -> satisfiable by exceedone/exment[v5.0.0, ..., v5.0.11].
+```
+この場合、php extensionを有効にしてください。
+#### Linuxの場合
+~~~
+# Ubuntu server
+sudo apt-get install php8.2-gd php8.2-zip
+
+# Centos server
+sudo yum install gd gd-devel php-gd php-pecl-zip.x86_64
+~~~
+
+#### Mac／Windowsの場合
+
+##### (1) php.iniファイルのパスを取得
+
+~~~
+# 以下のコマンドを実行します。php.iniファイルのパスは「Loaded Configuration File」の行に表示されます。
+
+php --ini
+~~~
+
+##### (2) php.iniファイルを修正
+
+~~~
+# 下記をコメントアウトを解除する
+extension=gd
+
+# 下記をコメントアウトを解除する
+extension=sodium
+
+# 下記をコメントアウトを解除する
+extension=zip
+~~~
+
+
 
 ### 初回インストール後、管理画面にアクセス時、「SQLSTATE[HY000][202] Permission denied」エラーが発生する
 ApacheからMySQLにアクセスを行う場合、SELinuxの設定が必要になる場合があります。  
