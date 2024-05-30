@@ -38,7 +38,7 @@ php artisan exment:update
 - 以下のコマンドを実行します。  
 このコマンドを実行した場合、皆さんが停止するか、ターミナルを閉じるまで実行し続けることに注意してください。
 
-> バックグランドでqueue:workプロセスを永続的に実行し続けるには、キューワーカが止まらずに実行し続けていることを確実にするため、[Supervisor](https://readouble.com/laravel/6.x/ja/queues.html#supervisor-configuration)のようなプロセスモニタを利用する必要があります。
+> バックグランドでqueue:workプロセスを永続的に実行し続けるには、キューワーカが止まらずに実行し続けていることを確実にするため、[Supervisor](https://readouble.com/laravel/10.x/ja/queues.html#supervisor-configuration)のようなプロセスモニタを利用する必要があります。
 
 ```
 php artisan queue:work
