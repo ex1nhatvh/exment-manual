@@ -110,7 +110,8 @@ HTML形式で内容を入力し、画面表示します。※スクリプトも�
 ![ダッシュボード画面](img/dashboard/dashboard_system5.png)
 
 - ##### 二次元バーコード
-二次元バーコード読込ボタンを表示します。
+二次元バーコード読込ボタンを表示します。  
+「二次元バーコード読込」ボタンの「二次元バーコード」の表示名を.envファイルの「EXMENT_TEXT_QR_BUTTON_JA/EN」で変更できます。
 ![ダッシュボード画面](img/dashboard/dashboard_system6.png)
 
 
