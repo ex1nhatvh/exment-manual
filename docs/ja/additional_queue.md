@@ -32,7 +32,7 @@ QUEUE_DRIVER=database
 ```
 php artisan queue:table
 php artisan queue:failed-table
-php artisan migrate
+php artisan exment:update
 ```
 
 - 以下のコマンドを実行します。  
