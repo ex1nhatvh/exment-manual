@@ -43,15 +43,6 @@ Please refer to the table below.
 
 ![2D barcode page](img/2d_barcode/barcode4.png)
 
-### Button display name
-Set the display name for "2D barcode" on the 2D barcode new creation and 2D barcode download buttons.
-
-- #### English
-Set the English display name for "2D barcode".
-
-- #### Japanese
-Set the Japanese display name for "2D barcode".
-
 ### 2D barcode reading
 Sets information for reading two-dimensional barcodes. 
 
@@ -71,7 +62,8 @@ After setting, click the "Save" button.
 ![2D barcode page](img/2d_barcode/barcode5.png)
 
 ## Create a new 2D barcode
-- After enabling the 2D barcode function, the "Create new 2D barcode" button will be displayed in the data list of the target table.
+- After enabling the 2D barcode function, the "Create new 2D barcode" button will be displayed in the data list of the target table.  
+You can change the display name of the "2D barcode" on the "Create new 2D barcode" button by changing "EXMENT_TEXT_QR_BUTTON_JA/EN" in the .env file.
 ![2D barcode page](img/2d_barcode/barcode6.png)
 
 - Click "Create new 2D barcode" to display the new 2D barcode creation screen.
@@ -81,7 +73,8 @@ After setting, click the "Save" button.
 ![2D barcode page](img/2d_barcode/barcode8.png)
 
 ## 2D barcode download
-- After enabling the 2D barcode function, a "2D barcode download" button will be displayed in the data list of the target table.
+- After enabling the 2D barcode function, a "2D barcode download" button will be displayed in the data list of the target table.  
+You can change the display name of the "2D barcode" on the "2D barcode download" button by changing "EXMENT_TEXT_QR_BUTTON_JA/EN" in the .env file.
 ![2D barcode page](img/2d_barcode/barcode9.png)
 
 - Select the target data and click "Download 2D barcode" to output the 2D barcode of the selected data as a PDF.
@@ -89,3 +82,7 @@ After setting, click the "Save" button.
 
 ![2D barcode page](img/2d_barcode/barcode11.png)
 
+## Launching the camera screen from Exment
+- From the Exment dashboard, you can launch the camera screen to read 2D barcodes.
+
+- For instructions on how to add the item "2D barcode reading" to the Exment dashboard, please see [here](/dashboard#_2d-barcode).
