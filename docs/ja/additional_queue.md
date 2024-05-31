@@ -24,7 +24,7 @@ Exmentでは、通常はすべての処理を同期実行していますが、�
 
 ```
 #キュードライバー。初期値はsync(同期処理)
-QUEUE_DRIVER=database
+QUEUE_CONNECTION=database
 ```
 
 - 以下のコマンドを実行します。キュー情報を保持するためのテーブルを作成します。
