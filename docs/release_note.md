@@ -17,7 +17,6 @@
 ## v6.0.3 (2024/05/09)
 1. Function fixes
     - Adjusting the display order of the view list when switching views.
-
 1. Bug fixes
     - Fix the bug where trying to update columns other than the image column (multiple selections OK) for data with an image column via the API (put-value) results in a 500 error.
     - Fix the malfunction in image deletion via the API.
@@ -29,14 +28,11 @@
 1. General
      - Compatible with Maria DB 10.11 Details [here](/update/v6_0_2)
      - Compatible with PHP Stan Level.4
-
 1. Added functions
      - Added deletion related event function in plugin (event)
-
 1. Function correction
      - Support to maintain view when searching for free words
      - Supported data display conditions such as views so that items included in the conditions are not displayed.
-
 1. Bug fixes
      - Fixed a bug where users with "all table management privileges" could not register or edit custom forms.
      - Fixed a bug where the "Organization hierarchy settings (role group)" in the system settings might not be followed when determining the "login user's role group"
@@ -55,7 +51,6 @@
 ## v6.0.0 (2024/02/15)
 
 - <span class="red bold">Updating from v5.0.X or lower to v6.0.0 or higher requires a manual update. Please check the contents of [here](/update/v6_0_php8) before updating. </span>
-
 1. General
      - Changed the framework used from Laravel9 to Laravel10
      - Changed the minimum PHP version from PHP8.0 to 8.2 or higher (recommended: PHP8.2)
@@ -67,7 +62,6 @@
 1. Bug fixes
      - Fixed a bug where the system dashboard was forced to become the user dashboard when saving on the dashboard settings change screen.
      - Fixed a bug where the child table sheet was output as empty when executing "Export (current page)" on a parent table that has a child table.
-
 1. Functional fixes
      - Fixed so that custom tables can be copied.
      - Corrected the "default redirect destination after saving data" for each custom table.
@@ -77,10 +71,8 @@
 1. Bug fixes
      - Fixed a bug that caused an error during import when multiple selections were allowed in custom columns.
      - Fixed a bug where option items were not linked to data
-
-1.Function correction
+1. Function correction
      - Additional fixes regarding child table display bugs in custom forms
-    
 1. Added functions
      - Added data replication function
      - Added valid flag to data update settings
@@ -99,7 +91,6 @@
      - Modified to treat unentered items as 0 in calculation formulas
      - Fixed the number of abbreviated display characters when displaying multiple lines of text when displaying a data list
      - Fixed workflow 404 error when adding ConditionModal
-
 1. Bug fixes
      - Fixed a bug that files uploaded to child tables were not displayed correctly
      - Fixed a bug that the plug-in button was not displayed in the calendar view
@@ -110,7 +101,6 @@
 1. Functional fixes
     - Fixed horizontal scrollbar in table permission settings
     - Fixed truncation when calculating
-
 1. Bug fixes
     - Fixed a bug that sorting by the sort icon of the view does not work
     - Fixed a bug that can not be changed to NO when the column type of the table is displayed in check box format by specifying YES / NO
@@ -120,10 +110,8 @@
 
 1. Addition of functions
     - Added openLDAP for LDAP authentication. (openLDAP 2.4.44)
-
 1. Functional fixes
     - Modal form display fixes
-
 1. Bug fixes
     - Fix for the top of the callout of items displayed in the calendar view being cut off (month view only)
 
@@ -141,16 +129,12 @@
 
 ## v5.0.3 (2022/08/17)
 - <span class="red bold">We are working on fixing this vulnerability. Please be sure to update.</span>Please check [here](/weakness/20220817)
-
 - <span class="red bold">Updating from v4.4.X or lower to v5.0.0 or higher requires a manual update. Please check [here](/update/v5_0_php8) once and update it.</span>
-
 1. Vulnerability response
     - Supports cross-site scripting and SQL injection that occur on specific screens. [Click here](/weakness/20220817) for details
-
 1. Functional fix
     - Fixed so that even users who do not have login settings can reset with the password reset command.
     - In password (batch), fixed the return value of Plugin's execute function as the return value of the command.
-
 1. Bug fix
     - Fixed a bug that the tooltip may protrude when displaying the month in the calendar view.
     - Fixed a bug that caused an error when displaying the details screen of parent data when many-to-many relation was performed and options (other tables) were set between the tables.
@@ -159,18 +143,15 @@
 ## v5.0.2 (2022/08/01)
 
 - <span class="red bold">Updating from v4.4.X or lower to v5.0.0 or higher requires a manual update. Please check [here](/update/v5_0_php8) once and update it.</span>
-
 1. Other
     - Source formatting of php-cs-fixer (*due to the revision of php-cs-fixer, which was accompanied by a major revision due to the rule change. We performed the version separately)
 
 ## v5.0.1 (2022/08/01)
 
 - <span class="red bold">Updating from v4.4.X or lower to v5.0.0 or higher requires a manual update. Please check [here](/update/v5_0_php8) once and update it.</span>
-
 1. Functional fix
     - Addition of processing to set values ​​in Excel by original processing in addition to general parameters in plug-ins (documents)
     - Addition of processing that can collectively obtain relational child data by adding the parameter children=1 when retrieving data with the API.
-
 1. Bug fixes
     - Fixed a bug that files cannot be selected/edited on the plug-in edit screen
     - Fixed a bug that the date at the time of new creation was cleared when updating data if "Register execution date" was set to "YES" in custom column type "Date"
@@ -179,13 +160,11 @@
 ## v5.0.0 (2022/07/22)
 
 - <span class="red bold">Updating from v4.4.X or lower to v5.0.0 or higher requires a manual update. Please check [here](/update/v5_0_php8) once and update it.</span>
-
 1. General
     - Changed the framework used from Laravel8 to Laravel9
     - Changed the minimum version of PHP from PHP 7.3 to 8.0 or higher (recommended: PHP 8.0)
 1. Addition of functions
     - Supports a script that rewrites the display contents of the calendar with a plug-in (script)
-
 1. Bug fix
     - Fixed a bug that emails are not sent when multiple email addresses are registered in the notification settings.
     - Fixed a bug that may not work properly when sharing or deleting data in notifications.
@@ -193,7 +172,6 @@
 
 ## v4.4.3 (2022/08/17)
 - <span class="red bold">We are working on fixing this vulnerability. Please be sure to update.</span>
-
 1. Vulnerability response
     - Supports cross-site scripting and SQL injection that occur on specific screens. [Click here](/weakness/20220817) for details
 
@@ -216,7 +194,6 @@
 ## v4.4.0 (2022/04/25)
 
 - <span class="red bold">Updating from v4.3.X or lower to v4.4.0 or higher requires a manual update. Please check the contents of [here](/update/v4_4) once and then update.</span>
-
 1. General
     - Changed the framework used from Laravel6 to Laravel8
     - Changed the minimum version of PHP from PHP 7.2 to 7.3
