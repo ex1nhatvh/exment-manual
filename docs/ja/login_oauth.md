@@ -90,7 +90,8 @@ composer require exment-oauth/microsoft-graph
 
 - 「サーバー・各プロバイダ設定」で、(2)(3)のプロバイダを選択した場合、「その他」を選択してください。  
 また、「その他」を選択した場合に表示される「プロバイダ種類(英数字)」には、Socialiteで指定されているプロバイダ種類の英数字を入力してください。  
-例 Microsoft Graphの場合："graph"
+例 Microsoft Graphの場合："graph"  
+例 EntraIDの場合："microsoft"
 
 ![ログイン設定作成画面](img/login/login_oauth2.png)  
 
@@ -182,6 +183,7 @@ $refresh_token = LoginService::getRefreshToken();
 http(s)://(ExmentのURL)/admin/auth/login/(socialiteのprovider名)/callback  
 
     - 例 Microsoft Graphの場合：http(s)://(ExmentのURL)/admin/auth/login/graph/callback
+    - 例 EntraIDの場合：http(s)://(ExmentのURL)/admin/auth/login/microsoft/callback
 
 - 以下のコマンドを、Exmentのルートディレクトリで実行します。
 
@@ -191,10 +193,13 @@ composer require laravel/socialite=~5.1
 
 - [Socialite Providers](https://socialiteproviders.github.io/)で指定されているパッケージを追加します。  
 
-    - 例：Microsoft Graphの場合
-
 ~~~
+    ### 例：Microsoft Graphの場合
 composer require socialiteproviders/microsoft-graph
+~~~
+~~~
+    ### 例：EntraIDの場合
+composer require socialiteproviders/microsoft
 ~~~
 
 ### (任意)アバター取得のための開発
@@ -206,6 +211,9 @@ getAvatarメソッドでは、アバターを取得するためのAPI処理を�
 下記の例は、Microsoft Graphでの手順です。
 
 ~~~ php
+
+// 例：Microsoft Graphの場合
+
 <?php
 
 namespace App\Socialite;
@@ -252,6 +260,9 @@ class MicrosoftGraphProvider extends Provider implements ProviderAvatar
 - 2つ目は、GraphExtendSocialite.phpです。作成したMicrosoftGraphProviderを指定します。
 
 ~~~ php
+
+// 例：Microsoft Graphの場合
+
 <?php
 
 namespace App\Socialite;
@@ -279,34 +290,28 @@ class GraphExtendSocialite
 また、「@handle」に記載のクラス名は、[Socialite Providers](https://socialiteproviders.github.io/)で追加したプロバイダのマニュアルに、多くの場合記載されていますので、ご確認ください。
 
 ~~~ php
-<?php
 
-namespace App\Providers;
+// 例：Microsoft Graphの場合
 
-use Illuminate\Support\Facades\Event;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+protected $listen = [
+    // ... other listenser
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        // ... other providers
+        \SocialiteProviders\Graph\GraphExtendSocialite::class.'@handle',
+    ],
+];
+~~~
+~~~ php
 
-class EventServiceProvider extends ServiceProvider
-{
-    /**
-     * The event listener mappings for the application.
-     *
-     * @var array
-     */
-    protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
-        ],
-        
-        /// 追加
-        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            '\App\Socialite\GraphExtendSocialite@handle', ///// アバターの取得のために独自開発を行った場合
-            // 'SocialiteProviders\\Graph\\GraphExtendSocialite@handle', ///// 通常の取得の場合は、こちらをコメントアウトして記載
-        ],
-    ];
+// 例：EntraIDの場合
 
-    // ...
-}
+protected $listen = [
+    // ... other listenser
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        // ... other providers
+        \SocialiteProviders\Microsoft\MicrosoftExtendSocialite::class.'@handle',
+    ],
+];
 
 ~~~
 
