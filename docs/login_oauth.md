@@ -40,7 +40,7 @@ http(s)://(Exment URL)/admin/auth/login/(socialite provider name)/callback
 composer require laravel/socialite=~5.1
 ~~~
 
-- Carry out [Screen Settings] (#Screen Settings).
+- Carry out [Screen Settings](#On-screen-settings).
 
 
 
@@ -61,7 +61,7 @@ http(s)://(Exment URL)/admin/auth/login/(socialite provider name)/callback
 composer require exment-oauth/microsoft-graph
 ~~~
 
-- Carry out [Screen Settings] (#Screen Settings).
+- Carry out [Screen Settings](#On-screen-settings).
 
 
 ### (3) If you provide your own provider
@@ -70,7 +70,7 @@ Also, unofficial providers do not include a process for obtaining avatars, so if
   
 ※There are several steps, so please see [How to create your own provider](#How to create your own provider) for details.
 
-- Once the procedure is complete, proceed to [Settings on screen](#Settings on screen).
+- Once the procedure is complete, proceed to [Settings on screen](#On-screen-settings).
 
 
 
@@ -100,7 +100,7 @@ Example: EntraID: "microsoft"
 Please set the string provided by your provider.
 
 ### Scope
-Basically, there is no explicit purpose for this when logging in, but we recommend setting it if you will be obtaining an access token with [obtain access token](#obtain access token).
+Basically, there is no explicit purpose for this when logging in, but we recommend setting it if you will be obtaining an access token with [obtain access token](#Obtaining-an-access-token).
 
 
 <!---
@@ -128,7 +128,7 @@ If YES, user information such as username will be updated when re-login.
 - Once you save your data at least once, the Activate button and the Test Login button will be displayed.
 
 - If the enable flag is set to YES, a button for SSO authentication will be displayed on the login screen.   
-※Normally, the default login form for entering the user ID and password will also be displayed. You can hide it as shown in the image in [SSO Settings](/system_setting?id=sso settings).
+※Normally, the default login form for entering the user ID and password will also be displayed. You can hide it as shown in the image in [SSO Settings](/system_setting?id=sso-settings).
 ![SSO login screen](img/quickstart/sso1.png)
 
 
@@ -341,7 +341,7 @@ If you want to enter your own provider-specific configuration values, add the va
 
 ### (Required) Configure screen settings
 
-- Once all server-side settings are complete, proceed to [On-screen settings](#On-screen settings).
+- Once all server-side settings are complete, proceed to [On-screen settings](#On-screen-settings).
 
   
   
