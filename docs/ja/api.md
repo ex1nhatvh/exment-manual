@@ -68,6 +68,37 @@ http(s)://(ExmentのURL)/admin/api_setting
 
 ![API認証画面](img/api/api_setting3.png)  
 
+
+- ファイル"app/Providers/AppServiceProvider.php"を開き、以下のように修正します。  
+※ファイルをすべて書き換えしていただいて構いません。
+
+``` php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Http\Controllers\AuthorizationController;
+use Illuminate\Contracts\Auth\StatefulGuard;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->when(AuthorizationController::class)
+            ->needs(StatefulGuard::class)
+            ->give(function () {
+                return app('auth.driver');
+            });
+    }
+
+    public function boot()
+    {
+        //
+    }
+}
+
+```
 ##### 独自で開発するWebサービス側の実装
 - Webサービス側で、Exment認証画面を呼び出すためのエンドポイントを作成します。
 
