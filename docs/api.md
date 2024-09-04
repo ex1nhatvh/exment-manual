@@ -59,6 +59,36 @@ Open the "Administrator Settings"> "Menu" page and select the menu type "System 
 
 ![API authentication screen](img/api/api_setting3.png)  
 
+- Open the file "app/Providers/AppServiceProvider.php" and modify it as below.  
+※You may rewrite all files.
+
+``` php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Http\Controllers\AuthorizationController;
+use Illuminate\Contracts\Auth\StatefulGuard;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->when(AuthorizationController::class)
+            ->needs(StatefulGuard::class)
+            ->give(function () {
+                return app('auth.driver');
+            });
+    }
+
+    public function boot()
+    {
+        //
+    }
+}
+
+```
 ##### Web service side implementation developed independently
 - On the Web service side, create an endpoint for calling the Exment authentication screen.
 
