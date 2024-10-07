@@ -91,7 +91,8 @@ Click the Login Settings button in the top right of the page to go to the Login 
 - If you selected provider (2) or (3) in the Server/Provider Settings, please select "Other."   
 Also, if you select "Other", please enter the alphanumeric characters for the provider type specified by Socialite in the provider type (alphanumeric characters) that appears.   
 Example: Microsoft Graph: "graph"  
-Example: EntraID: "microsoft"
+Example: EntraID: "microsoft"  
+Example: Okta: "okta"
 
 ![Login setting creation screen](img/login/login_oauth2.png)  
 
@@ -184,6 +185,7 @@ http(s)://(Exment URL)/admin/auth/login/(socialite provider name)/callback
 
     - Example: For Microsoft Graph: http(s)://(Exment URL)/admin/auth/login/graph/callback
     - Example: For EntraID: http(s)://(Exment URL)/admin/auth/login/microsoft/callback
+    - Example: For Okta: http(s)://(Exment URL)/admin/auth/login/okta/callback
 
 - Run the following command in the Exment root directory:
 
@@ -200,6 +202,10 @@ composer require socialiteproviders/microsoft-graph
 ~~~
     ### Example: EntraID
 composer require socialiteproviders/microsoft
+~~~
+~~~
+    ### Example: Okta
+composer require socialiteproviders/okta
 ~~~
 
 ### (Optional) Development for obtaining avatars
@@ -314,6 +320,19 @@ protected $listen = [
 ];
 
 ~~~
+~~~php
+
+// Example: Okta
+
+protected $listen = [
+    // ... other listenser
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        // ... other providers
+        \SocialiteProviders\Okta\OktaExtendSocialite::class.'@handle',
+    ],
+];
+
+~~~
 
 
 ### (Required by Provider) Add optional settings
@@ -333,6 +352,11 @@ Example: [OKTA](https://github.com/SocialiteProviders/Okta)
 
 ```
 OKTA_BASE_URL='https://<OKTA domain>'
+```
+Ex:  
+
+```
+OKTA_BASE_URL='https://dev-51260944.okta.com/'
 ```
 
 > Originally, Socialite requires the setting values ​​of "client_id", "client_secret", and "redirect" in config/services.php, and in Exment's OAuth authentication, the values ​​set on the screen are automatically assigned.   

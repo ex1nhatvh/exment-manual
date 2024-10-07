@@ -91,7 +91,8 @@ composer require exment-oauth/microsoft-graph
 - 「サーバー・各プロバイダ設定」で、(2)(3)のプロバイダを選択した場合、「その他」を選択してください。  
 また、「その他」を選択した場合に表示される「プロバイダ種類(英数字)」には、Socialiteで指定されているプロバイダ種類の英数字を入力してください。  
 例 Microsoft Graphの場合："graph"  
-例 EntraIDの場合："microsoft"
+例 EntraIDの場合："microsoft"  
+例 Oktaの場合："okta"  
 
 ![ログイン設定作成画面](img/login/login_oauth2.png)  
 
@@ -184,6 +185,7 @@ http(s)://(ExmentのURL)/admin/auth/login/(socialiteのprovider名)/callback
 
     - 例 Microsoft Graphの場合：http(s)://(ExmentのURL)/admin/auth/login/graph/callback
     - 例 EntraIDの場合：http(s)://(ExmentのURL)/admin/auth/login/microsoft/callback
+    - 例 Oktaの場合：http(s)://(ExmentのURL)/admin/auth/login/okta/callback
 
 - 以下のコマンドを、Exmentのルートディレクトリで実行します。
 
@@ -200,6 +202,10 @@ composer require socialiteproviders/microsoft-graph
 ~~~
     ### 例：EntraIDの場合
 composer require socialiteproviders/microsoft
+~~~
+~~~
+    ### 例：Oktaの場合
+composer require socialiteproviders/okta
 ~~~
 
 ### (任意)アバター取得のための開発
@@ -314,6 +320,19 @@ protected $listen = [
 ];
 
 ~~~
+~~~ php
+
+// 例：Oktaの場合
+
+protected $listen = [
+    // ... other listenser
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        // ... other providers
+        \SocialiteProviders\Okta\OktaExtendSocialite::class.'@handle',
+    ],
+];
+
+~~~
 
 
 ### (プロバイダにより必須)オプション設定の追加
@@ -334,7 +353,10 @@ OAuthサインインのプロバイダにより、追加の設定を行う必要
 ```
 OKTA_BASE_URL='https://<OKTAのドメイン>'
 ```
-
+例:  
+```
+OKTA_BASE_URL='https://dev-51260944.okta.com/'
+```
 > 本来、Socialiteでは、config/services.phpの"client_id", "client_secret", "redirect"の設定値を必須としており、ExmentのOAuth認証では、画面で設定した値を、自動的に付与するようになっています。  
 プロバイダ独自の設定値を入力したい場合は、config/services.phpに、上記のように値を追加するようにしてください。
 
