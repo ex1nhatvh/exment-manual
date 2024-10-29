@@ -108,6 +108,11 @@ sudo vi /etc/httpd/conf/httpd.conf
     AllowOverride All
     Require all granted
   </Directory>
+  
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
 </VirtualHost>
 ~~~
 
