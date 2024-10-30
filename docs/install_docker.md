@@ -19,6 +19,16 @@ This page is constructed with the following contents.
 
 - This procedure only describes the steps to run Exment with Docker.   
 General IT knowledge such as SSH, database creation, Docker commands, etc. is not included. note that.   
+- Từ v6.1.x có thể thêm header Content Security Policy
+
+Sửa file web/volumes/nginx.cnf từ line 7 thêm nội dung sau
+
+```
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'";
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+```
 
 ## Installation steps using Docker
 
