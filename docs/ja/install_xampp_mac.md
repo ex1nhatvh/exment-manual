@@ -87,7 +87,7 @@ http://localhost/phpmyadmin/index.php
 <VirtualHost *:80>
     DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs"
     ServerName localhost
-    #v6.1.xx以上の場合、以下の記述を、末尾に追加
+    # v6.1.xx以上の場合、以下の記述を、末尾に追加
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-Content-Type-Options "nosniff"
@@ -97,7 +97,7 @@ http://localhost/phpmyadmin/index.php
 <VirtualHost *:80>
   DocumentRoot "/Applications/XAMPP/local/exment/public"
   ServerName exment.localapp
-  #v6.1.xx以上の場合、以下の記述を、末尾に追加
+  # v6.1.xx以上の場合、以下の記述を、末尾に追加
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-Content-Type-Options "nosniff"

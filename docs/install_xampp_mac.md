@@ -90,7 +90,7 @@ Please set according to the following procedure.
 <VirtualHost *:80>
     DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs"
     ServerName localhost
-  #For v6.1.xx or later, add the following to the end
+  # For v6.1.xx or later, add the following to the end
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-Content-Type-Options "nosniff"
@@ -100,7 +100,7 @@ Please set according to the following procedure.
 <VirtualHost *:80>
   DocumentRoot "/Applications/XAMPP/local/exment/public"
   ServerName exment.localapp
-  #For v6.1.xx or later, add the following to the end
+  # For v6.1.xx or later, add the following to the end
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set X-Content-Type-Options "nosniff"
