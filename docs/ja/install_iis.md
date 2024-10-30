@@ -223,25 +223,24 @@ Exment を実行するための IIS の準備を行います
    - 名前：任意 (例：PHP)  
    ![モジュール マップの追加](img/iis/iis_s10.png)
 8. 確認メッセージが表示されたら \[はい\] をクリックします
-9. Từ v6.1.x có thể thêm header Content Security Policy
+9. v6.1.xx以上の場合は、Content Security Policy Headerを追加します。  
+   1.  PHPのconfigファイルを開きます。（configファイルが存在しない場合は、新規作成ください。） 
+   2.  以下の内容を追加します。  
 
-- Mở tệp web.config của ứng dụng PHP trên IIS. Nếu chưa có tệp này, bạn có thể tạo mới.
-- Thêm cấu hình sau
-
-```
-<configuration>
-    <system.webServer>
-        <httpProtocol>
-            <customHeaders>
-                <add name="Content-Security-Policy" value="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'" />
-                <add name="X-Frame-Options" value="SAMEORIGIN" />
-                <add name="X-Content-Type-Options" value="nosniff" />
-                <add name="X-XSS-Protection" value="1; mode=block" />
-            </customHeaders>
-        </httpProtocol>
-    </system.webServer>
-</configuration>
-```
+      ```
+      <configuration>
+          <system.webServer>
+              <httpProtocol>
+                  <customHeaders>
+                      <add name="Content-Security-Policy" value="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'" />
+                      <add name="X-Frame-Options" value="SAMEORIGIN" />
+                      <add name="X-Content-Type-Options" value="nosniff" />
+                      <add name="X-XSS-Protection" value="1; mode=block" />
+                  </customHeaders>
+              </httpProtocol>
+          </system.webServer>
+      </configuration>
+      ```
 
 ### Composer のインストール
 Exment で必要となる PHP ライブラリー管理ツール (Composer) をインストールします

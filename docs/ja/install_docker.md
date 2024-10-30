@@ -20,6 +20,16 @@ Dockerイメージは、[yamada28go氏によるdockerリポジトリ](https://gi
 - 本手順では、ExmentをDockerで動作させるための手順のみの記載となります。  
 SSHやデータベース作成、Dockerコマンドなど、一般的なIT系のナレッジについては記載致しておりません。ご了承ください。  
 
+- v6.1.xx以上の場合は、Content Security Policy Headerを追加します。  
+web/volumes/nginx.cnfファイルの7行目以降、以下の内容を追加します。
+
+```
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'";
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+```
+
 ## Dockerによるインストール手順
 
 > ※ここでは、もっともスタンダードな、「Webサーバー」「MySQL」の構成を行う場合の手順になります。  

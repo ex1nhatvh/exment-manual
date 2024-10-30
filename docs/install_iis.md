@@ -218,6 +218,25 @@ Prepare IIS to run Exment
    - Name: Any (Example: PHP)  
    ![Add module map](img/iis/iis_s10.png)
 8. Click \[Yes\] when the confirmation message appears.
+9. For v6.1.xx and above, add a Content Security Policy Header.  
+   1.  Open the PHP config file. (If the config file does not exist, create a new one.) 
+   2.  Add the following content:  
+
+      ```
+      <configuration>
+          <system.webServer>
+              <httpProtocol>
+                  <customHeaders>
+                      <add name="Content-Security-Policy" value="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; object-src 'self'; frame-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'" />
+                      <add name="X-Frame-Options" value="SAMEORIGIN" />
+                      <add name="X-Content-Type-Options" value="nosniff" />
+                      <add name="X-XSS-Protection" value="1; mode=block" />
+                  </customHeaders>
+              </httpProtocol>
+          </system.webServer>
+      </configuration>
+      ```
+
 
 ### Installing Composer
 Install the PHP library management tool (Composer) required by Exment
