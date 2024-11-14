@@ -109,9 +109,9 @@ Exment公式サイトより、新着情報を取得し表示します。
 HTML形式で内容を入力し、画面表示します。※スクリプトも実行されます。
 ![ダッシュボード画面](img/dashboard/dashboard_system5.png)
 
-- ##### 二次元バーコード
-二次元バーコード読込ボタンを表示します。  
-「二次元バーコード読込」ボタンの「二次元バーコード」の表示名を.envファイルの「EXMENT_TEXT_QR_BUTTON_JA/EN」で変更できます。
+- ##### 二次元／JANバーコード
+二次元／JANバーコード読込ボタンを表示します。  
+「二次元／JANバーコード読込」ボタンの「二次元／JANバーコード」の表示名を.envファイルの「EXMENT_TEXT_SCAN_BUTTON_JA/EN」で変更できます。
 ![ダッシュボード画面](img/dashboard/dashboard_system6.png)
 
 
