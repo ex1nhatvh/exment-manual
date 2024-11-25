@@ -479,13 +479,24 @@ Due to the above background, <span class="red">please make this setting at your 
 - Role : By setting to true when scheduling is executed, you can check the scheduling definition and the progress of execution. For details, please check [here](/additional_task_schedule) "Verification when it does not work".
 \* For verification.
 
-### 2D barcode
-#### Button display name (Japanese)
-- Setting key : EXMENT_TEXT_QR_BUTTON_JA
-- Default value : (None)
-- Role : Sets the Japanese display name of "二次元バーコード" for the Create new 2D barcode, Download 2D barcode, and Read 2D barcode buttons. If no special specification is specified, it will be "二次元バーコード".
+### 2D Barcode
+#### Button Display Name (Japanese)
+- **Configuration Key**: `EXMENT_TEXT_QR_BUTTON_JA`  
+- **Default Value**: (None)  
+- **Purpose**: Sets the Japanese display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "二次元バーコード".
 
-#### Button display name (English)
-- Setting key : EXMENT_TEXT_QR_BUTTON_EN
-- Default value : (None)
-- Role : Sets the Japanese display name of "2D barcode" for the Create new 2D barcode, Download 2D barcode, and Read 2D barcode buttons. If no special specification is specified, it will be "2D barcode".
+#### Button Display Name (English)
+- **Configuration Key**: `EXMENT_TEXT_QR_BUTTON_EN`  
+- **Default Value**: (None)  
+- **Purpose**: Sets the English display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "2D barcode".
+
+### 2D/JAN Barcode
+#### Button Display Name (Japanese)
+- **Configuration Key**: `EXMENT_TEXT_SCAN_BUTTON_JA`  
+- **Default Value**: (None)  
+- **Purpose**: Sets the Japanese display name for the "2D/JAN Barcode" scan button. If not specified, the default is "二次元／JANバーコード".
+
+#### Button Display Name (English)
+- **Configuration Key**: `EXMENT_TEXT_SCAN_BUTTON_EN`  
+- **Default Value**: (None)  
+- **Purpose**: Sets the English display name for the "2D/JAN Barcode" scan button. If not specified, the default is "2D barcode/JANcode".
