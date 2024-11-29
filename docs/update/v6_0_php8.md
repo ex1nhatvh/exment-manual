@@ -322,7 +322,7 @@ If you are using a proprietary file driver, such as Dropbox, you will need to mo
 
   SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'personal_access_tokens' already exists 
 ```
-#### In this case, execute the following commands:
+- In this case, execute the following commands:
 
 ``` bash
 sudo -u apache sed -i '14,18s/^/\/\//' database/migrations/2014_10_12_100000_create_password_reset_tokens_table.php
