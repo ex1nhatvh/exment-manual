@@ -316,6 +316,14 @@ The decryption password will be sent separately.
     - 1 : Login user and lowest organization
     - 2 : Login user and all affiliated organizations
 
+#### Location of the 'custom_value_(table_name)' class
+- Setting Key: EXMENT_SHOW_PAGE_CLASS_TYPE
+- Default Value: 1
+- Role: Configures the insertion position of the "custom_value_(table name)" class. Please select from the following options:
+    - 1 OR No Setting: The class will be set in the parent container of optional information such as attachments, comments, etc.
+    - 2: The class will be set in the container displaying custom column items.
+    - 3: The class will be set in both the above 1 and 2.
+
 ### Order setting
 
 #### Sorting order of affiliated organization settings on the user edit page
