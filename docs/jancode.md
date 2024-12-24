@@ -54,4 +54,4 @@ After configuration, click the "Save" button.
 ## Launching the Camera Screen from Exment
 - You can launch the camera screen for 2D/JAN barcode reading from the Exment dashboard.
 
-- For instructions on how to add the "2D/JAN Barcode" item to the Exment dashboard, please refer to [this guide](/dashboard#2d-jan-barcode).
+- For instructions on how to add the "2D/JAN Barcode" item to the Exment dashboard, please refer to [this guide](/dashboard#_2djan-barcode).
