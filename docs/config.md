@@ -489,22 +489,22 @@ Due to the above background, <span class="red">please make this setting at your 
 
 ### 2D Barcode
 #### Button Display Name (Japanese)
-- **Configuration Key**: EXMENT_TEXT_QR_BUTTON_JA  
-- **Default Value**: (None)  
-- **Purpose**: Sets the Japanese display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "二次元バーコード".
+- Setting key: EXMENT_TEXT_QR_BUTTON_JA  
+- Default Value: (None)  
+- Role: Sets the Japanese display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "二次元バーコード".
 
 #### Button Display Name (English)
-- **Configuration Key**: EXMENT_TEXT_QR_BUTTON_EN  
-- **Default Value**: (None)  
-- **Purpose**: Sets the English display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "2D barcode".
+- Setting key: EXMENT_TEXT_QR_BUTTON_EN  
+- Default Value: (None)  
+- Role: Sets the English display name for "2D Barcode" used in creating and downloading 2D barcodes. If not specified, the default is "2D barcode".
 
 ### 2D/JAN Barcode
 #### Button Display Name (Japanese)
-- **Configuration Key**: EXMENT_TEXT_SCAN_BUTTON_JA  
-- **Default Value**: (None)  
-- **Purpose**: Sets the Japanese display name for the "2D/JAN Barcode" scan button. If not specified, the default is "二次元／JANバーコード".
+- Setting key: EXMENT_TEXT_SCAN_BUTTON_JA  
+- Default Value: (None)  
+- Role: Sets the Japanese display name for the "2D/JAN Barcode" scan button. If not specified, the default is "二次元／JANバーコード".
 
 #### Button Display Name (English)
-- **Configuration Key**: EXMENT_TEXT_SCAN_BUTTON_EN  
-- **Default Value**: (None)  
-- **Purpose**: Sets the English display name for the "2D/JAN Barcode" scan button. If not specified, the default is "2D barcode/JANcode".
+- Setting key: EXMENT_TEXT_SCAN_BUTTON_EN  
+- Default Value: (None)  
+- Role: Sets the English display name for the "2D/JAN Barcode" scan button. If not specified, the default is "2D barcode/JANcode".
