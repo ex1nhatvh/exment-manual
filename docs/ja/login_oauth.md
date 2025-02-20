@@ -303,6 +303,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        ///// アバターの取得のために独自開発を行った場合
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
@@ -316,6 +317,19 @@ class EventServiceProvider extends ServiceProvider
 
     // ...
 }
+
+~~~
+~~~php
+
+// EntraID
+
+protected $listen = [
+    // ... other listeners
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        // ... other providers
+        \SocialiteProviders\Microsoft\MicrosoftExtendSocialite::class.'@handle',
+    ],
+];
 
 ~~~
 
