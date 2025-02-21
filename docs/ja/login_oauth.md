@@ -288,40 +288,26 @@ class GraphExtendSocialite
 また、「@handle」に記載のクラス名は、[Socialite Providers](https://socialiteproviders.github.io/)で追加したプロバイダのマニュアルに、多くの場合記載されていますので、ご確認ください。
 
 ~~~ php
-<?php
 
-namespace App\Providers;
+// 例：Microsoft Graphの場合
 
-use Illuminate\Support\Facades\Event;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-
-class EventServiceProvider extends ServiceProvider
-{
-    /**
-     * The event listener mappings for the application.
-     *
-     * @var array
-     */
-    protected $listen = [
-        ///// アバターの取得のために独自開発を行った場合
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
-        ],
-        
-        /// 追加
-        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            '\App\Socialite\GraphExtendSocialite@handle', ///// アバターの取得のために独自開発を行った場合
-            // 'SocialiteProviders\\Graph\\GraphExtendSocialite@handle', ///// 通常の取得の場合は、こちらをコメントアウトして記載
-        ],
-    ];
-
-    // ...
-}
+protected $listen = [
+    ///// アバターの取得のために独自開発を行った場合
+    'App\Events\Event' => [
+        'App\Listeners\EventListener',
+    ],
+    
+    /// 追加
+    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+        '\App\Socialite\GraphExtendSocialite@handle', ///// アバターの取得のために独自開発を行った場合
+        // 'SocialiteProviders\\Graph\\GraphExtendSocialite@handle', ///// 通常の取得の場合は、こちらをコメントアウトして記載
+    ],
+];
 
 ~~~
 ~~~php
 
-// EntraID
+// 例：EntraIDの場合
 
 protected $listen = [
     // ... other listeners
