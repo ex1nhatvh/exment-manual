@@ -137,7 +137,8 @@ If YES, user information such as username will be updated when re-login.
 - Once you save your data at least once, the Activate button and the Test Login button will be displayed.
 
 - If the enable flag is set to YES, a button for SSO authentication will be displayed on the login screen.   
-※Normally, the default login form for entering the user ID and password will also be displayed. You can hide it as shown in the image in [SSO Settings](/system_setting?id=sso-settings).
+※Normally, the default login form for entering the user ID and password will also be displayed. You can hide it as shown in the image in [SSO Settings](/system_setting?id=sso-settings).  
+
 ![SSO login screen](img/quickstart/sso1.png)
 
 
