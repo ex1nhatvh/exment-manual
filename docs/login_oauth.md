@@ -58,7 +58,7 @@ http(s)://(Exment URL)/admin/auth/login/(socialite provider name)/callback
 - Run the following command in the Exment root directory:
 
 ~~~
-composer require exment-oauth/microsoft-graph
+composer require exceedone/microsoft-graph
 ~~~
 
 - Carry out [Screen Settings](#On-screen-settings).

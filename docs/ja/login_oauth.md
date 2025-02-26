@@ -58,7 +58,7 @@ http(s)://(ExmentのURL)/admin/auth/login/(socialiteのprovider名)/callback
 - 以下のコマンドを、Exmentのルートディレクトリで実行します。
 
 ~~~
-composer require exment-oauth/microsoft-graph
+composer require exceedone/microsoft-graph
 ~~~
 
 - [画面での設定](#画面での設定)を実施します。
