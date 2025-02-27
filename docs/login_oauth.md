@@ -110,7 +110,7 @@ Set options according to the provider type selected.
 ![Option Settings](img/login/login_setting10.png) 
 
 ##### Single Sign-out
-When you log out of Exment, you are also logged out of the provider you logged in with SSO.
+When you log out of Exment, you are also logged out of the provider you logged in with SSO.<span class="red">*Okta is not supported.</span>
 
 <!---
   OAuth, write the same thing in Saml
