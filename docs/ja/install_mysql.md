@@ -127,7 +127,7 @@ sudo yum remove mysql mysql-server mysql-client mysql-common mysql-devel mysql-c
 - MySQL8.0をインストールし起動します。
 
 ~~~
-# ĐỐI VỚI CENTOS STREAM
+# CENTOS STREAMの場合
 
 rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
 rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
@@ -141,7 +141,7 @@ systemctl enable mysqld
 ~~~
 
 ~~~
-# ĐỐI VỚI CENTOS 8
+# CENTOS8の場合
 sudo rpm -ivh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 
@@ -175,7 +175,7 @@ sudo systemctl start mysqld
 - MySQL8.0をインストールし起動します。
 
 ~~~
-# ĐỐI VỚI CENTOS STREAM
+# CENTOSSTREAMの場合
 
 rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
 rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
@@ -189,7 +189,7 @@ systemctl enable mysqld
 ~~~
 
 ~~~
-# ĐỐI VỚI CENTOS 8
+# CENTOS 8の場合
 sudo rpm -ivh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 
