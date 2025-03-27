@@ -224,15 +224,15 @@ EXMENT_FILTER_SEARCH_FULL=true
 - 既定値 ： 100
 - 役割 : APIの一括削除で、同時に削除できる最大件数です。
 
-#### データのlabel（）
-- 設定キー : EXMENT_API_APPEND_LABEL
-- 既定値 ： false
-- 役割 : trueにすることで、データ一覧取得、もしくはデータ新規作成・更新の実行時に、label列を含めることができます。
-
 #### APIのアクセス回数上限
 - 設定キー : EXMENT_API_MAX_RATE_LIMIT
 - 既定値 ： 60
 - 役割 : APIトークンのユーザー毎の1分あたりのAPIアクセス回数を指定できます。
+
+#### データのlabel（）
+- 設定キー : EXMENT_API_APPEND_LABEL
+- 既定値 ： false
+- 役割 : trueにすることで、データ一覧取得、もしくはデータ新規作成・更新の実行時に、label列を含めることができます。
 
 
 ### 一覧(グリッド)
