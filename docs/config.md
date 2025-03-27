@@ -221,6 +221,12 @@ The decryption password will be sent separately.
 - Setting key : EXMENT_API_MAX_DELETE_COUNT
 - Default value ： 100
 - Role : Maximum number of APIs that can be deleted at the same time by batch deletion.
+Here is the translation to English in Markdown format:
+
+#### API Access Rate Limit
+- Setting Key: EXMENT_API_MAX_RATE_LIMIT
+- Default Value: 60
+- Role: Specifies the number of API accesses per user per minute for each API token.
 
 #### Get data label
 - Setting key : EXMENT_API_APPEND_LABEL
