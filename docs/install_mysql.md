@@ -223,9 +223,9 @@ cat /var/log/mysqld.log | grep password
 ~~~
 vi /etc/my.cnf
 
-#Add the following validate-password
+#Add the following validate_password
 [mysqld]
-validate-password=OFF
+validate_password=OFF
 ~~~
 
 
