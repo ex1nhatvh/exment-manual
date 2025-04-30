@@ -4,7 +4,7 @@
 
 - <span class="red bold">※現在、大変申し訳ございませんが、インストール手順やサーバー構築についての個別のお問い合わせは承っておりません。個別対応をご希望の場合、有償のサポートをご希望ください。</span>　　
 
-- 現在、下記以外の環境の、マニュアルのご用意はございません。ご了承ください。
+- 現在、ご用意している環境の構築手順は、以下の通りです。
 
 ## Webサーバー
 Webサーバーの構築手順です。以下のいずれかの手順で、Webサーバーを構築してください。  
@@ -19,9 +19,9 @@ Webサーバーの構築手順です。以下のいずれかの手順で、Web�
 - [レンタルサーバー構築](/ja/install_rental)  
 →Exmentを公開し、手軽に他のメンバーやスマートフォンからもアクセスを行いたい場合
 
-- [Linuxに構築](/ja/install_centos_stream)  
-→ExmentをLinux(CentOS Stream)にインストールする場合の手順  
- ※CentOS8で構築していた方は[こちら](/ja/install_linux)
+- [Linuxに構築](/ja/install_almalinux)  
+→ExmentをLinux(AlmaLinux)にインストールする場合の手順  
+ ※CentOSで構築していた方は[こちら](/ja/about_migration_from_centos)
 
 - [IISに構築](/ja/install_iis)  
 →ExmentをIISに構築する場合の手順
