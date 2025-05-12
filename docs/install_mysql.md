@@ -281,7 +281,7 @@ Also, assume the connection source IP address is 192.168.137.%.
 ~~~
 CREATE DATABASE exment_database;
 CREATE USER 'exment_user'@'192.168.137.%' IDENTIFIED BY '(password for exment_user)';
-GRANT ALL ON exment_database.* TO exment_user identified by '(password for exment_user)';
+GRANT ALL ON exment_database.* TO 'exment_user'@'192.168.137.%';
 FLUSH PRIVILEGES;
 ~~~
 

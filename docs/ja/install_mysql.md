@@ -278,7 +278,7 @@ sudo systemctl restart mysqld
 ~~~
 CREATE DATABASE exment_database;
 CREATE USER 'exment_user'@'192.168.137.%' IDENTIFIED BY '(exment_user用のパスワード)';
-GRANT ALL ON exment_database.* TO exment_user identified by '(exment_user用のパスワード)';
+GRANT ALL ON exment_database.* TO 'exment_user'@'192.168.137.%';
 FLUSH PRIVILEGES;
 ~~~
 
