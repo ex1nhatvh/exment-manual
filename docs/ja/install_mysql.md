@@ -140,6 +140,16 @@ systemctl start mysqld
 systemctl enable mysqld
 ~~~
 
+-   **Lưu ý:** Đường dẫn `.rpm` phụ thuộc vào phiên bản của hệ điều hành.  
+-   Ví dụ với AlmaLinux 9.5:
+~~~
+[root@localhost ~]# uname -a
+Linux localhost.localdomain 5.14.0-503.11.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 12 09:26:13 EST 2024 x86_64 x86_64 x86_64 GNU/Linux
+~~~
+-   Trong trường hợp này, lệnh phù hợp sẽ là:
+~~~
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-5.noarch.rpm
+~~~
 ~~~
 # CENTOS8の場合
 sudo rpm -ivh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
@@ -154,6 +164,16 @@ sudo yum -y module disable mysql
 # mysql-community-serverをインストールし起動する
 sudo yum -y install mysql-community-server
 sudo systemctl enable mysqld.service
+~~~
+-   **Lưu ý:** Đường dẫn `.rpm` phụ thuộc vào phiên bản của hệ điều hành.  
+-   Ví dụ với AlmaLinux 9.5:
+~~~
+[root@localhost ~]# uname -a
+Linux localhost.localdomain 5.14.0-503.11.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 12 09:26:13 EST 2024 x86_64 x86_64 x86_64 GNU/Linux
+~~~
+-   Trong trường hợp này, lệnh phù hợp sẽ là:
+~~~
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-5.noarch.rpm
 ~~~
 - my.cnfを修正します。
 
@@ -188,6 +208,16 @@ systemctl start mysqld
 systemctl enable mysqld
 ~~~
 
+-   **Lưu ý:** Đường dẫn `.rpm` phụ thuộc vào phiên bản của hệ điều hành.  
+-   Ví dụ với AlmaLinux 9.5:
+~~~
+[root@localhost ~]# uname -a
+Linux localhost.localdomain 5.14.0-503.11.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 12 09:26:13 EST 2024 x86_64 x86_64 x86_64 GNU/Linux
+~~~
+-   Trong trường hợp này, lệnh phù hợp sẽ là:
+~~~
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-5.noarch.rpm
+~~~
 ~~~
 # CENTOS 8の場合
 sudo rpm -ivh http://dev.mysql.com/get/mysql80-community-release-el7-11.noarch.rpm
@@ -205,6 +235,16 @@ sudo systemctl enable mysqld.service
 sudo systemctl start mysqld
 ~~~
 
+-   **Lưu ý:** Đường dẫn `.rpm` phụ thuộc vào phiên bản của hệ điều hành.  
+-   Ví dụ với AlmaLinux 9.5:
+~~~
+[root@localhost ~]# uname -a
+Linux localhost.localdomain 5.14.0-503.11.1.el9_5.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 12 09:26:13 EST 2024 x86_64 x86_64 x86_64 GNU/Linux
+~~~
+-   Trong trường hợp này, lệnh phù hợp sẽ là:
+~~~
+sudo rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el9-5.noarch.rpm
+~~~
 
 - MySQLの初期パスワードを確認します。
 
