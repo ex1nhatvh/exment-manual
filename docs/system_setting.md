@@ -90,17 +90,18 @@ $ php artisan passport:keys
 - If the setting is YES, it is possible to grant the authority specified by the organization in [Use authority management](#Use-authority-management).
 - The initial value is "YES".
 
-#### Bật nhật ký hoạt động
-- Nếu đặt thành CÓ, chức năng nhật ký hoạt động sẽ được bật và mọi hoạt động của người dùng sẽ được ghi lại.
-- 初期値は「NO」です。
-- Download file ZIP và cài đặt template
-[Template zip file] (https://exment.net/template/system_logs.zip)
+#### Enable Operation Log
+- If set to "Yes", the activity log feature will be enabled, and all user operations will be recorded.
+- The initial value is "NO".
 
-- Chạy lệnh cập nhật:
+![Enable Operation Log](img/logs/enable_operation_log.png)  
+- Please download the ZIP file and install the template:
+[Template zip file] (https://exment.net/template/system_logs.zip)
+- Run the update command:
 ~~~
    php artisan exment:update
 ~~~
-![Nhật ký hệ thống](img/logs/system_log.png)  
+![System Logs](img/logs/system_log.png)  
 
 #### System Administrator
 - You can set the user who will be the system monitor.

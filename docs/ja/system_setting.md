@@ -88,16 +88,18 @@ Exmentで情報管理をするにあたり、サイトとしての基本情報�
 - 設定がYESの場合、[権限管理を使用する](#権限管理を使用する)にあたり、組織を指定した権限の付与が可能になります。  
 - 初期値は「YES」です。  
 
-#### Bật nhật ký hoạt động
-- Nếu đặt thành CÓ, chức năng nhật ký hoạt động sẽ được bật và mọi hoạt động của người dùng sẽ được ghi lại.
+#### 操作ログを有効にする
+- 「YES」に設定すると、操作ログ機能が有効になり、ユーザーのすべての操作が記録されます。
 - 初期値は「NO」です。
-- Download file ZIP và di chuyển vào thư mục template
 
-- Chạy lệnh cập nhật:
+![操作ログを有効にする](img/logs/enable_operation_log.png)  
+- ZIPファイルをダウンロードし、テンプレートをインストールしてください。
+[Template zip file] (https://exment.net/template/system_logs.zip)
+- 更新コマンドを実行します。
 ~~~
    php artisan exment:update
 ~~~
-![Nhật ký hệ thống](img/logs/system_log.png)  
+![システムパフォーマンスログ](img/logs/system_log.png)  
 
 #### システム管理者
 - システム監視者となるユーザーを設定することができます。
