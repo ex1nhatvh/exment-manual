@@ -90,6 +90,17 @@ $ php artisan passport:keys
 - If the setting is YES, it is possible to grant the authority specified by the organization in [Use authority management](#Use-authority-management).
 - The initial value is "YES".
 
+#### Bật nhật ký hoạt động
+- Nếu đặt thành CÓ, chức năng nhật ký hoạt động sẽ được bật và mọi hoạt động của người dùng sẽ được ghi lại.
+- 初期値は「NO」です。
+- Download file ZIP và di chuyển vào thư mục template
+
+- Chạy lệnh cập nhật:
+~~~
+   php artisan exment:update
+~~~
+![Nhật ký hệ thống](img/logs/system_log.png)  
+
 #### System Administrator
 - You can set the user who will be the system monitor.
 - The user who made the initial settings when installing Exment is registered as the initial value.
