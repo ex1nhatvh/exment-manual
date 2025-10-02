@@ -88,6 +88,17 @@ Exmentで情報管理をするにあたり、サイトとしての基本情報�
 - 設定がYESの場合、[権限管理を使用する](#権限管理を使用する)にあたり、組織を指定した権限の付与が可能になります。  
 - 初期値は「YES」です。  
 
+#### Bật nhật ký hoạt động
+- Nếu đặt thành CÓ, chức năng nhật ký hoạt động sẽ được bật và mọi hoạt động của người dùng sẽ được ghi lại.
+- 初期値は「NO」です。
+- Download file ZIP và di chuyển vào thư mục template
+
+- Chạy lệnh cập nhật:
+~~~
+   php artisan exment:update
+~~~
+![Nhật ký hệ thống](img/logs/system_log.png)  
+
 #### システム管理者
 - システム監視者となるユーザーを設定することができます。
 - Exmentのインストール時に初期設定を行ったユーザーが初期値として登録されています。
