@@ -94,6 +94,7 @@ $ php artisan passport:keys
 - Nếu đặt thành CÓ, chức năng nhật ký hoạt động sẽ được bật và mọi hoạt động của người dùng sẽ được ghi lại.
 - 初期値は「NO」です。
 - Download file ZIP và giải nén vào thư mục templates
+[Template zip file] (https://exment.net/template/system_logs.zip)
 
 - Chạy lệnh cập nhật:
 ~~~
