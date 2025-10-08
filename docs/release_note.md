@@ -1,6 +1,17 @@
 # Release notes
 * Click [here](/patch_weakness) for the patch / vulnerability list.
 
+## v6.2.7 (2025/10/08)
+1. 機能修正
+   - Laravel.log にパフォーマンス調査向けのログ出力を追加 詳細は[こちら]
+   - 集計ビューにフィルタ機能を追加
+1. 不具合修正 
+    - ワークフローに関する不具合修正 事象発生手順： 
+     1. WF実行ボタンが表示された詳細画面を表示
+     2. 別画面でWFを進める
+     3. 未更新の画面①ですでに実行済のWFボタン押下  
+      ⇒ 特にチェックもなく実行できてしまう
+
 ## v6.2.5 (2025/06/19)
 1. Functionality fixes
     - Added comment search to filters
@@ -8,7 +19,6 @@
 1. Bug fixes
     - Fixed bug where viewing permissions were not inherited to child tables
     - Fixed bug where forms could not be deleted
-
 
 ## v6.2.4 (2025/05/21)
 1. Functionality fixes
