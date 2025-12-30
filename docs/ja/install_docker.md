@@ -9,7 +9,7 @@ Dockerイメージは、[oreno4649氏によるdockerリポジトリ](https://git
 ## 環境
 本ページでは、以下の内容で構築を行っております。  
 - nginx 最新版
-- PHP 8.2.XX
+- PHP 8.3.XX
 - Debian
 - MySQL 8.0.XX
 

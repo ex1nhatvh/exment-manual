@@ -143,10 +143,10 @@ rm /usr/bin/composer
 #### Linuxの場合
 ~~~
 # Ubuntu server
-sudo apt-get install php8.2-gd php8.2-zip
+sudo apt-get install php8.3-gd php8.3-zip
 
 # Centos server
-sudo yum install gd gd-devel php-gd php-pecl-zip.x86_64
+sudo yum install gd gd-devel php-gd php-zip
 ~~~
 
 #### Mac／Windowsの場合

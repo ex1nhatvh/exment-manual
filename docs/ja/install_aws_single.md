@@ -8,7 +8,7 @@ Webサーバーのインストールをはじめとして、完全に新規に�
 本ページでは、以下の内容で構築を行っております。  
 - Amazon Linux 2
 - Apache 2.4.53
-- PHP 8.2.x
+- PHP 8.3.x
 - MySQL 8.0.x
 
 
@@ -42,23 +42,23 @@ sudo yum -y update
 ~~~
 
 - インストール可能なPHPのバージョンを確認します。  
-※PHP8.2以外のバージョンが有効(enabled)になっている場合は無効化しておきましょう。  
+※PHP8.3以外のバージョンが有効(enabled)になっている場合は無効化しておきましょう。  
 
 ~~~
-sudo amazon-linux-extras | grep php
+sudo rpm -qa | grep ^php
 ~~~
 
-- 「php8.2」を確認できたら、インストールを行います。
+- 「php8.3」を確認できたら、インストールを行います。
 
 ~~~
-sudo amazon-linux-extras install -y php8.2
+sudo yum install -y php8.3
 ~~~
 
 - その他、必要ライブラリのインストールを行います。
 
 ~~~
 sudo yum install -y httpd git
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
+sudo yum -y install php-zip php-xml php-mbstring php-gd php-sodium php-dom
 ~~~
 
 - 以下のコマンドを実行し、Apacheを起動、自動起動設定します。
@@ -180,7 +180,7 @@ sudo systemctl restart php-fpm
 ## PHPバージョンアップ時の対応
 PHPのバージョンを変更する場合、以下の手順でバージョンアップを行ってください。  
 ※バージョンアップ作業中は、Exmentにアクセスできなくなります。  
-※下記の例は、PHP8.0からPHP8.2へアップデートするための手順です。  
+※下記の例は、PHP8.0からPHP8.3へアップデートするための手順です。  
 ※Amazon Linux 2のExtras Library(amazon-linux-extras)を用いて、PHPのインストールを行っている前提です。  
 ※環境や導入時期、バージョンやインストール方法によって、バージョンアップ方法は異なる場合があります。  
 
@@ -193,17 +193,11 @@ which amazon-linux-extras
 ~~~
 
 - PHPのバージョンとExtras Libraryのトピックを確認します。  
-※PHPのバージョンが8.0.Xであること。PHP8.0のトピックがenabledであること、PHP8.2のトピックが存在することを確認してください。  
+※PHPのバージョンが8.0.Xであること。PHP8.0のトピックがenabledであること、PHP8.3のトピックが存在することを確認してください。  
 
 ~~~
 php -v
-amazon-linux-extras | grep php
-~~~
-
-- PHP8.0のトピックを無効にします。  
-
-~~~
-sudo amazon-linux-extras disable php8.0
+rpm -qa | grep ^php
 ~~~
 
 - PHPフォルダを空にします。  
@@ -212,24 +206,24 @@ sudo amazon-linux-extras disable php8.0
 sudo yum -y remove php\*
 ~~~
 
-- PHP8.2のトピックを有効化後にインストールします。  
+- PHP8.3のトピックを有効化後にインストールします。  
 
 ~~~
-sudo amazon-linux-extras enable php8.2
-sudo amazon-linux-extras install -y php8.2
+sudo amazon-linux-extras enable php8.3
+sudo yum install -y php8.3
 ~~~
 
 - PHPの拡張機能をインストールします。  
 
 ~~~
-sudo yum -y install php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
+sudo yum -y install php-xml php-mbstring php-gd php-sodium php-dom
 ~~~
 
-- PHPのバージョンが8.Xになっていること、PHP8.0のトピックがdisabled、PHP8.2のトピックがenabledになっていることを確認します。  
+- PHPのバージョンが8.Xになっていること、PHP8.0のトピックがdisabled、PHP8.3のトピックがenabledになっていることを確認します。  
 
 ~~~
 php -v
-amazon-linux-extras | grep php
+rpm -qa | grep ^php
 ~~~
 
 - 以下のコマンドを実行してください。

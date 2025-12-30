@@ -4,7 +4,7 @@ This page describes the steps to build Exment on a rental server.
 
 ## Points to note when building on a rental server
 - Exment requires the following environment.
-    1. PHP 8.2 or higher
+    1. PHP 8.3 or higher
     1. MySQL 8.0 or higher or MariaDB 10.4 or higher  
   <span class="red">In particular, the version of MySQL may not meet the requirements depending on the rental server.   
   Please check in advance whether the rental server you are using meets the conditions. </span>
@@ -49,14 +49,14 @@ From the command result, copy the path to the PHP version that you took note of 
 ~~~ bash
 find /opt/php-*/bin -type f -name 'php'
 
-## /opt/php-8.2.9/bin/php ←Click here for this example
+## /opt/php-8.3.21/bin/php ←Click here for this example
 ~~~
 
 - Create a folder and create a symbolic link to PHP.   
 
 ~~~
 mkdir $HOME/bin
-ln -s /opt/php-8.2.9/bin/php $HOME/bin/php
+ln -s /opt/php-8.3.21/bin/php $HOME/bin/php
 ~~~
 
 - Modify the bashrc file to pass the path to the above PHP version.   
@@ -119,7 +119,7 @@ If you want to access ※Exment, please add /admin to the end of the URL.
 #### Correspondence when upgrading PHP version
 If you want to change the PHP version, please update it by following the steps below.   
 ※Exment will not be accessible while the version is being upgraded.   
-※The example procedure below is for updating from PHP7.4 to PHP8.2.   
+※The example procedure below is for updating from PHP7.4 to PHP8.3.   
 ※The version upgrade method may differ depending on the environment, installation time, version, and installation method.   
 
 - From the Xserver management screen, click PHP Ver. Switch.   
@@ -148,13 +148,13 @@ unlink $HOME/bin/php
 ~~~bash
 find /opt/php-*/bin -type f -name 'php'
 
-## /opt/php-8.2.9/bin/php  ←Click here for this example
+## /opt/php-8.3.21/bin/php  ←Click here for this example
 ~~~
 
 - Set a symbolic link to the path confirmed above.   
 
 ~~~
-ln -s /opt/php-8.2.9/bin/php $HOME/bin/php
+ln -s /opt/php-8.3.21/bin/php $HOME/bin/php
 ~~~
 
 - Check PHP version. If it's a new version, it's a success.   

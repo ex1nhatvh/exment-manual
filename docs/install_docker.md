@@ -9,7 +9,7 @@ The Docker image is built based on the [docker repository by oreno4649](https://
 ## Environment
 This page is constructed with the following contents.   
 - nginx latest version
-- PHP 8.2.XX
+- PHP 8.3.XX
 - Debian
 - MySQL 8.0.XX
 

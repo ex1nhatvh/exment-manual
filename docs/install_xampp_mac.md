@@ -13,7 +13,7 @@ In addition, this manual introduces the case of Mac.
 - Access the following site and download XAMPP.  
 [XAMPP Download](https://www.apachefriends.org/jp/download.html)  
 
-- From XAMPP for OS X, select PHP 8.2 and download it.  
+- From XAMPP for OS X, select PHP 8.3 and download it.  
 
 ![XAMPP installation screen](img/xampp_mac/xampp_mac1.png)
 

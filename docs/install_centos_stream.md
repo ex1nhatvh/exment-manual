@@ -8,7 +8,7 @@ The following environment is used for this setup:
 
 - CentOS Stream
 - Apache 2.4.37
-- PHP 8.2.x
+- PHP 8.3.x
 - MySQL 8
 
 ## Notes
@@ -54,10 +54,10 @@ dnf install dnf-utils -y
 
 ```bash
 dnf module reset php -y
-dnf module enable php:remi-8.2 -y
+dnf module enable php:remi-8.3 -y
 ```
 
-- Check the list of PHP packages available for installation. Make sure `remi-8.2` has an `[e]` next to it.
+- Check the list of PHP packages available for installation. Make sure `remi-8.3` has an `[e]` next to it.
 
 ```bash
 dnf module list php
@@ -69,7 +69,7 @@ dnf module list php
 dnf install php php-cli php-common php-mbstring php-mysqli php-dom php-gd php-zip php-sodium -y
 ```
 
-- Verify that the PHP version is 8.2:
+- Verify that the PHP version is 8.3:
 
 ```bash
 php -v

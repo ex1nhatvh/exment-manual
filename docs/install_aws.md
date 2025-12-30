@@ -21,11 +21,11 @@ This page is constructed with the following configuration.
 - Amazon Linux2-A
     - amzn2-ami-hvm-2.0.20191116.0-x86_64-gp2
     - Apache 2.4.41
-    - PHP 8.2.x
+    - PHP 8.3.x
 - Amazon Linux2-B
     - amzn2-ami-hvm-2.0.20191116.0-x86_64-gp2
     - Apache 2.4.41
-    - PHP 8.2.x
+    - PHP 8.3.x
 - Amazon Linux2-Springboard
     - amzn2-ami-hvm-2.0.20191116.0-x86_64-gp2
 - Amazon Elastic Load Balancing
@@ -227,9 +227,9 @@ ssh -i ~/exment_key.pem ec2-user@(web server A's private IP address)
 
 ~~~
 sudo yum -y update
-sudo amazon-linux-extras install -y php8.2
+sudo yum install -y php8.3
 sudo yum install -y httpd mysql
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
+sudo yum -y install php-zip php-xml php-mbstring php-gd php-sodium php-dom
 ~~~
 
 - Execute the following command to start Apache and configure automatic startup settings.

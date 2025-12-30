@@ -8,7 +8,7 @@ Additionally, this procedure **assumes a simple one-web server configuration**
 This page is constructed with the following contents.   
 - Amazon Linux 2
 - Apache 2.4.53
-- PHP 8.2.x
+- PHP 8.3.x
 - MySQL 8.0.x
 
 
@@ -42,23 +42,23 @@ sudo yum -y update
 ~~~
 
 - Check the installable PHP versions.   
-※If a version other than PHP8.2 is enabled, disable it.   
+※If a version other than PHP8.3 is enabled, disable it.   
 
 ~~~
-sudo amazon-linux-extras | grep php
+sudo dnf search php
 ~~~
 
-- Once you have confirmed php8.2, install it.
+- Once you have confirmed php8.3, install it.
 
 ~~~
-sudo amazon-linux-extras install -y php8.2
+sudo yum install -y php8.3
 ~~~
 
 - Install other required libraries.
 
 ~~~
 sudo yum install -y httpd git
-sudo yum -y install php-pecl-zip.x86_64 php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
+sudo yum -y install php-zip php-xml php-mbstring php-gd php-sodium php-dom
 ~~~
 
 - Execute the following command to start Apache and configure automatic startup settings.
@@ -180,7 +180,7 @@ sudo systemctl restart php-fpm
 ## Correspondence when upgrading PHP version
 If you want to change the PHP version, please update it by following the steps below.   
 ※Exment will not be accessible while the version is being upgraded.   
-※The example below is the procedure for updating from PHP8.0 to PHP8.2.   
+※The example below is the procedure for updating from PHP8.0 to PHP8.3.   
 ※It is assumed that PHP is installed using the Amazon Linux 2 Extras Library (amazon-linux-extras).   
 ※The version upgrade method may differ depending on the environment, installation time, version, and installation method.   
 
@@ -193,17 +193,11 @@ which amazon-linux-extras
 ~~~
 
 - Check PHP version and Extras Library topics.   
-※PHP version is 8.0.X. Please make sure that the PHP8.0 topic is enabled and the PHP8.2 topic exists.   
+※PHP version is 8.0.X. Please make sure that the PHP8.0 topic is enabled and the PHP8.3 topic exists.   
 
 ~~~
 php -v
-amazon-linux-extras | grep php
-~~~
-
-- Disable topics for PHP8.0.   
-
-~~~
-sudo amazon-linux-extras disable php8.0
+rpm -qa | grep ^php
 ~~~
 
 - Empty the PHP folder.   
@@ -212,24 +206,23 @@ sudo amazon-linux-extras disable php8.0
 sudo yum -y remove php\*
 ~~~
 
-- Install PHP8.2 topics after activation.   
+- Install PHP8.3 topics after activation.   
 
 ~~~
-sudo amazon-linux-extras enable php8.2
-sudo amazon-linux-extras install -y php8.2
+sudo yum install -y php8.3
 ~~~
 
 - Install PHP extensions.   
 
 ~~~
-sudo yum -y install php-xml.x86_64 php-mbstring.x86_64 php-gd.x86_64 php-sodium.x86_64 php-dom.x86_64
+sudo yum -y install php-zip php-xml php-mbstring php-gd php-sodium php-dom
 ~~~
 
-- Make sure that the PHP version is 8.X, and that the PHP8.0 topic is disabled and the PHP8.2 topic is enabled.   
+- Make sure that the PHP version is 8.X, and that the PHP8.0 topic is disabled and the PHP8.3 topic is enabled.   
 
 ~~~
 php -v
-amazon-linux-extras | grep php
+rpm -qa | grep ^php
 ~~~
 
 - Please run the following command.

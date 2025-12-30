@@ -11,7 +11,7 @@ Please note that this manual is based on Windows.
 - Access the site below and download XAMPP.   
 [XAMPP download](https://www.apachefriends.org/jp/download.html)
 
-- From the page below, select the one that requires PHP 8.2 or higher and download it.   
+- From the page below, select the one that requires PHP 8.3 or higher and download it.   
 ![XAMPP installation screen](img/xampp/xampp_win.png)
 
 - Then proceed with the installation of XAMPP.  
@@ -145,14 +145,14 @@ Here, it is assumed that the installation was performed in the "C:\xampp\local\e
 ## Correspondence when upgrading PHP version
 If you want to change the PHP version, please update it by following the steps below.   
 ※Exment will not be accessible while the version is being upgraded.   
-※The example below is the procedure for updating from PHP7.4 to PHP8.2. This is also a way to replace only PHP without updating all of XAMPP.   
+※The example below is the procedure for updating to PHP8.3. This is also a way to replace only PHP without updating all of XAMPP.   
 ※The version upgrade method may differ depending on the environment, installation time, version, and installation method.   
 
 - In preparation for work, stop apache and MySQL and exit the XAMPP control panel.   
 
 - Back up the PHP folder (default is C:\xampp\php) and Apache folder (default is C:\xampp\apache) under the currently used XAMPP. Choose your preferred method, such as renaming the folder or copying it to another location.
 
-- Download new XAMPP in ZIP format.   
+- If upgrade PHP7.4 to 8.3: Download new XAMPP in ZIP format.   
 
    1. Access [XAMPP download](https://www.apachefriends.org/jp/download.html)
    2. Download the file according to the OS and PHP version you want to use.   
@@ -161,18 +161,42 @@ If you want to change the PHP version, please update it by following the steps b
 
    3. Unzip the ZIP file and copy the PHP folder and Apache folder directly under the extracted folder to the XAMPP folder.   
 
+- If upgrade PHP8x to 8.3: Download new PHP.   
+
+   1. Access https://windows.php.net/download/
+   2. Download the \[VC16 x64 Thread Safe\] ZIP file for \[PHP 8.3\]  
+      > If you are using a 32-bit version of Windows in a Windows 10 environment, please download the \[VC16 x86 Thread Safe \] ZIP file.
+   3. Extract the contents of the ZIP file to the same path as the previous PHP.   
+   ※ It is assumed that PATH is set in the environment variable.   
+
 - Modify the php.ini file if necessary.   
 ※ If you have modified the original ini file, the new ini file must also have the same changes. Compare the backed up php.ini file with the new php.ini file and add various settings.   
+   1. If the GD library in the "Dynamic Extension" section is commented out, enable it.
+        ```
+        ;extension=gd
+        ```
+        Change as belows (Remove the ; from the beginning of the line to uncomment it)
+        ```
+        extension=gd
+        ```
+
+      ※ Depending on the original PHP version, extension=gd2 may be set. Please change extension=gd.   
+   2. Update path of extension_dir: (default is C:\xampp\php\ext)
+         ```
+         extension_dir=C:\xampp\php\ext
+         ```
 
 - Launch the XAMPP control panel.   
 
-- Press the Apache config button and select Apache (httpd-xampp.conf) from the pulldown.
-   ![XAMPP selection screen](img/xampp/xampp9.png)
+- If upgrade PHP7.4 to 8.3: 
 
-- Edit httpd-xampp.conf.
-   1. First, replace all "php7_module" with "php_module".
-   2. Replace all remaining "php7" with "php8".  
-   ![httpd-xampp.conf edit screen](img/xampp/xampp10.png)
+   - Press the Apache config button and select Apache (httpd-xampp.conf) from the pulldown.
+      ![XAMPP selection screen](img/xampp/xampp9.png)
+
+   - Edit httpd-xampp.conf.
+      1. First, replace all "php7_module" with "php_module".
+      2. Replace all remaining "php7" with "php8".  
+      ![httpd-xampp.conf edit screen](img/xampp/xampp10.png)
 
 - Press the Shell button to launch the command screen and check that the PHP version is new.   
 

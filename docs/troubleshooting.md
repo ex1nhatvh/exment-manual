@@ -163,7 +163,7 @@ In this case, please enable the php extension.
 sudo apt-get install php8.2-gd php8.2-zip
 
 # Centos server
-sudo yum install gd gd-devel php-gd php-pecl-zip.x86_64
+sudo yum install gd gd-devel php-gd php-zip
 ~~~
 
 #### For Mac/Windows

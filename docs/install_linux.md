@@ -6,7 +6,7 @@ This is a completely new installation procedure, including the installation of t
 This page is constructed with the following contents.   
 - Red Hat Enterprise Linux release 8.6
 - Apache 2.4.37
-- PHP 8.2.x
+- PHP 8.3.x
 - MySQL 8
 
 ## Important point
@@ -51,11 +51,11 @@ dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 ~~~
 dnf module reset php -y
-dnf module enable php:remi-8.2 -y
+dnf module enable php:remi-8.3 -y
 ~~~
 
 - Check the list of PHP packages currently in use & available.   
-It is OK if remi-8.2 has [e].
+It is OK if remi-8.3 has [e].
 
 ~~~
 dnf module list php
@@ -67,7 +67,7 @@ dnf module list php
 dnf install php php-cli php-common php-mbstring php-mysqli php-dom php-gd php-zip php-sodium -y
 ~~~
 
-- Make sure your PHP version is 8.2.   
+- Make sure your PHP version is 8.3.   
 
 ~~~
 php -v

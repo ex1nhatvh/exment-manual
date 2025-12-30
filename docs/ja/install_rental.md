@@ -4,7 +4,7 @@
 
 ## レンタルサーバーで構築を行う際の注意点
 - Exmentは、以下の環境が必要になります。
-    1. PHP 8.2以上
+    1. PHP 8.3以上
     1. MySQL 8.0以上  
     または MariaDB 10.4以上  
   <span class="red">特にMySQLのバージョンが、レンタルサーバーによっては条件を満たしていない場合があります。  
@@ -50,14 +50,14 @@ Xserverの場合、管理画面から設定するPHPのバージョンと、SSH�
 ~~~ bash
 find /opt/php-*/bin -type f -name 'php'
 
-## /opt/php-8.2.9/bin/php ←今回の例ではこちら
+## /opt/php-8.3.21/bin/php ←今回の例ではこちら
 ~~~
 
 - フォルダを作成し、PHPへのシンボリックリンクを作成します。  
 
 ~~~
 mkdir $HOME/bin
-ln -s /opt/php-8.2.9/bin/php $HOME/bin/php
+ln -s /opt/php-8.3.21/bin/php $HOME/bin/php
 ~~~
 
 - bashrcファイルを修正し、上記PHPバージョンへのパスを通します。  
@@ -120,7 +120,7 @@ ln -s $HOME/(ドメイン名)/laravel/exment/public $HOME/(ドメイン名)/publ
 #### PHPバージョンアップ時の対応
 PHPのバージョンを変更する場合、以下の手順でバージョンアップを行ってください。  
 ※バージョンアップ作業中は、Exmentにアクセスできなくなります。  
-※下記の手順例は、PHP7.4からPHP8.2へアップデートするための手順です。  
+※下記の手順例は、PHP7.4からPHP8.3へアップデートするための手順です。  
 ※環境や導入時期、バージョンやインストール方法によって、バージョンアップ方法は異なる場合があります。  
 
 - Xserverの管理画面から、「PHP Ver.切替」をクリックします。  
@@ -149,13 +149,13 @@ unlink $HOME/bin/php
 ~~~ bash
 find /opt/php-*/bin -type f -name 'php'
 
-## /opt/php-8.2.9/bin/php  ←今回の例ではこちら
+## /opt/php-8.3.21/bin/php  ←今回の例ではこちら
 ~~~
 
 - 上記で確認したパスにシンボリックリンクを設定します。  
 
 ~~~
-ln -s /opt/php-8.2.9/bin/php $HOME/bin/php
+ln -s /opt/php-8.3.21/bin/php $HOME/bin/php
 ~~~
 
 - PHPバージョンを確認します。新しいバージョンになっていれば成功です。  

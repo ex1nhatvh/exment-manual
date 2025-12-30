@@ -145,14 +145,14 @@ Exmentのインストールは、通常"C:\xampp\local"フォルダ内で行い�
 ## PHPバージョンアップ時の対応
 PHPのバージョンを変更する場合、以下の手順でバージョンアップを行ってください。  
 ※バージョンアップ作業中は、Exmentにアクセスできなくなります。  
-※下記の例は、PHP7.4からPHP8.2へアップデートするための手順です。また、XAMPP全てをアップデートせずに、PHPだけを置き換える方法です。  
+※下記の例は、PHP8.3へアップデートするための手順です。また、XAMPP全てをアップデートせずに、PHPだけを置き換える方法です。  
 ※環境や導入時期、バージョンやインストール方法によって、バージョンアップ方法は異なる場合があります。  
 
 - 作業の前準備としてapacheやMySQLを停止し、XAMPPコントロールパネルを終了します。  
 
 - 現在使用しているXAMPP配下のPHPフォルダ（デフォルトはC:\xampp\php）とApacheフォルダ（デフォルトはC:\xampp\apache）をバックアップします。フォルダの名前を変更する、別の場所にコピーする等お好きな方法を選択してください。
 
-- 新しいXAMPPをZIP形式でダウンロードします。  
+- PHP7.4から8.3へアップグレードする場合：新しいXAMPPをZIP形式でダウンロードします。  
 
    1. [XAMPPダウンロード](https://www.apachefriends.org/jp/download.html) にアクセスします
    2. OSや使用したいPHPのバージョンに合わせてファイルをダウンロードします。  
@@ -160,19 +160,42 @@ PHPのバージョンを変更する場合、以下の手順でバージョン�
       ![XAMPPダウンロード画面](img/xampp/xampp8.png)
 
    3. ZIP ファイルを解凍して、展開されたフォルダ直下にあるPHPフォルダとApacheフォルダをXAMPP配下にコピーします。  
+- PHP8.xから8.3へアップグレードする場合：新しいPHPをダウンロードします。  
+
+   1. https://windows.php.net/download/ にアクセスします
+   2. \[PHP 8.3\] の \[VC16 x64 Thread Safe\] の ZIP ファイルをダウンロードします  
+      > Windows 10 環境で 32 ビット版 Windows を利用している場合は、\[VC16 x86 Thread Safe \] の ZIP ファイルをダウンロードしてください
+   3. ZIP ファイルの内容を前のPHPと同じパスに展開します。  
+   ※ 環境変数でPATHが通っていることが前提です。  
 
 - 必要に応じてphp.iniファイルを修正します。  
 ※元のiniファイルを変更している場合は、新しいiniファイルにも同じ変更が必要です。バックアップしたphp.iniファイルと新しいphp.iniファイルを比較して、各種設定値などを追加してください。  
+   1. "Dynamic Extension" セクションのGDライブラリがコメント化されている場合は有効にしてください。
+        ```
+        ;extension=gd
+        ```
+        を
+        ```
+        extension=gd
+        ```
+        に変更 (行頭の ; を取ってコメントを外します)
+
+      ※ 元のPHPバージョンによってはextension=gd2になっている場合があります。extension=gdに変更してください。  
+   2. extension_dir のパスを更新してください（デフォルト：C:\xampp\php\ext）
+        ```
+        extension_dir=C:\xampp\php\ext
+        ```
 
 - XAMPPコントロールパネルを起動します。  
 
-- Apacheのconfigボタンを押して、プルダウンから「Apache(httpd-xampp.conf)」を選択します。 
-   ![XAMPP選択画面](img/xampp/xampp9.png)
+- PHP7.4から8.3へアップグレードする場合：
+   - Apacheのconfigボタンを押して、プルダウンから「Apache(httpd-xampp.conf)」を選択します。 
+      ![XAMPP選択画面](img/xampp/xampp9.png)
 
-- httpd-xampp.confを編集します。 
-   1. 最初に"php7_module"をすべて"php_module"に置き換えてください。
-   2. 残りの"php7"をすべて"php8"に置き換えてください。
-   ![httpd-xampp.conf編集画面](img/xampp/xampp10.png)
+   - httpd-xampp.confを編集します。 
+      1. 最初に"php7_module"をすべて"php_module"に置き換えてください。
+      2. 残りの"php7"をすべて"php8"に置き換えてください。
+      ![httpd-xampp.conf編集画面](img/xampp/xampp10.png)
 
 - Shellボタンを押して、コマンド画面を立ち上げ、PHPのバージョンが新しくなったことを確認してください。  
 

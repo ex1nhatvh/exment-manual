@@ -6,7 +6,7 @@ This is a completely new installation procedure, including the installation of t
 This page is constructed with the following contents.   
 - Windows Server 2019 Standard Japanese version
 - IIS 10
-- PHP 8.2.X
+- PHP 8.3.X
 - MySQL 8.0.35
 
 Appropriate notes are provided if Windows 10 is used for verification purposes.
@@ -43,7 +43,7 @@ If the IIS feature is not enabled on your server, first install the IIS feature.
 ### Preparing PHP
 Download and install PHP
 1. Visit https://windows.php.net/download/
-2. Download the \[VC15 x64 Non Thread Safe\] ZIP file for \[PHP 8.2\]  
+2. Download the \[VC15 x64 Non Thread Safe\] ZIP file for \[PHP 8.3\]  
    > If you are using a 32-bit version of Windows in a Windows 10 environment, please download the \[VC15 x86 Non Thread Safe \] ZIP file
 3. Right-click the downloaded ZIP file to display properties, check   Unblock   under \[Security\] on the \[General\] tab, and click \[OK\]. Click   
    ![Unblock](img/iis/iis_s04.png)
@@ -400,7 +400,7 @@ The following example shows the steps to add permissions to the storage folder.
 ## Correspondence when upgrading PHP version
 If you want to change the PHP version, please update it by following the steps below.   
 ※Exment will not be accessible while the version is being upgraded.   
-※The example below is the procedure for updating from PHP7.4 to PHP8.2.   
+※The example below is the procedure for updating from PHP to PHP8.3.   
 ※The version upgrade method may differ depending on the environment, installation time, version, and installation method.   
 
 - Stop IIS in preparation for work.   
@@ -410,7 +410,7 @@ If you want to change the PHP version, please update it by following the steps b
 - Download new PHP.   
 
    1. Access https://windows.php.net/download/
-   2. Download the \[VC15 x64 Non Thread Safe\] ZIP file for \[PHP 8.2\]  
+   2. Download the \[VC15 x64 Non Thread Safe\] ZIP file for \[PHP 8.3\]  
       > If you are using a 32-bit version of Windows in a Windows 10 environment, please download the \[VC15 x86 Non Thread Safe \] ZIP file.
    3. Extract the contents of the ZIP file to the same path as the previous PHP.   
    ※ It is assumed that PATH is set in the environment variable.   
@@ -431,7 +431,7 @@ If you want to change the PHP version, please update it by following the steps b
 
 - Start IIS.   
 
-- Check that the PHP version is 8.2.X using a command prompt, etc.   
+- Check that the PHP version is 8.3.X using a command prompt, etc.   
 
 ~~~
 php -v

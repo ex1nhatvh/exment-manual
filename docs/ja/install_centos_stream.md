@@ -6,7 +6,7 @@ Webサーバーのインストールをはじめとして、完全に新規に�
 本ページでは、以下の内容で構築を行っております。  
 - CentOS Stream
 - Apache 2.4.37
-- PHP 8.2.x
+- PHP 8.3.x
 - MySQL 8
 
 ## 注意点
@@ -52,11 +52,11 @@ dnf install dnf-utils -y
 
 ~~~
 dnf module reset php -y
-dnf module enable php:remi-8.2 -y
+dnf module enable php:remi-8.3 -y
 ~~~
 
 - 現在使用中＆使用可能なPHPパッケージのリストを確認します。  
-remi-8.2に[e]がついていればＯＫです。
+remi-8.3に[e]がついていればＯＫです。
 
 ~~~
 dnf module list php
@@ -68,7 +68,7 @@ dnf module list php
 dnf install php php-cli php-common php-mbstring php-mysqli php-dom php-gd php-zip php-sodium -y
 ~~~
 
-- PHPのバージョンが8.2になっていることを確認します。  
+- PHPのバージョンが8.3になっていることを確認します。  
 
 ~~~
 php -v
